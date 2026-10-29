@@ -5,7 +5,7 @@ Robot que actualiza la web de noticias del podcast.
 Lo ejecuta GitHub Actions cada pocos minutos (ver .github/workflows/actualizar.yml):
   1. Lee las fuentes de fuentes.json (RSS/Atom).
   2. Guarda las noticias nuevas en data/noticias.json (lo que muestra la web).
-  3. Traduce y explica cada noticia con la IA gratuita de GitHub Models, le pone
+  3. Traduce y explica cada noticia con la IA gratuita de Google (Gemini), le pone
      un nivel (1-5) y un tema, y la manda a Telegram. Las de nivel 4-5 suenan y te mencionan.
   4. Avisa también de los resúmenes nuevos que Claude escriba en data/resumenes.json.
 
@@ -39,14 +39,13 @@ MAX_POR_FUENTE = 15
 MAX_MENSAJES_POR_RONDA = 40  # más de esto se agrupa en un solo mensaje
 MENCION = "@hugoo20"         # se te menciona en las noticias importantes y urgentes
 NIVEL_MENCION = 4            # desde qué nivel (1-5) se te menciona y suena
-IA_MODELO = "openai/gpt-4o-mini"
-IA_SERVIDORES = [  # se prueba en orden
-    ("https://models.github.ai/inference/chat/completions", IA_MODELO),
-    ("https://models.inference.ai.azure.com/chat/completions", "gpt-4o-mini"),
-]
+# IA gratuita de Google (Gemini). La clave se saca gratis en https://aistudio.google.com/apikey
+# y se guarda en GitHub como secreto GEMINI_API_KEY. Se prueban los modelos en orden.
+IA_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+IA_MODELOS = ["gemini-flash-lite-latest", "gemini-flash-latest", "gemini-2.5-flash-lite", "gemini-2.5-flash"]
 IA_POR_PETICION = 10         # noticias que se mandan juntas a la IA
 IA_PETICIONES_POR_RONDA = 4
-IA_PETICIONES_POR_DIA = 140  # el plan gratis de GitHub Models da 150 al día
+IA_PETICIONES_POR_DIA = 400  # muy por debajo del límite gratis de Gemini
 HORAS_SILENCIO = (0, 8)      # de 00:00 a 08:00 (hora de Madrid) no se envía nada; se junta en un resumen
 ZONA = "Europe/Madrid"
 
@@ -54,7 +53,7 @@ UA = "Mozilla/5.0 (compatible; PodcastNoticiasBot/1.0; +https://github.com)"
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
 CHAT = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 WEB = os.environ.get("SITE_URL", "").strip()
-GH_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
+IA_CLAVE = os.environ.get("GEMINI_API_KEY", "").strip()
 
 
 # ----------------------------------------------------------------- utilidades
@@ -236,7 +235,7 @@ def preguntar_ia(lote, nombres):
         "palabras_clave": n.get("motivos", [])[:4],
     } for n in lote]
     cuerpo = json.dumps({
-        "model": IA_MODELO,
+        "model": IA_MODELOS[0],
         "temperature": 0.2,
         "response_format": {"type": "json_object"},
         "messages": [
@@ -245,14 +244,13 @@ def preguntar_ia(lote, nombres):
         ],
     }).encode()
     errores = []
-    for url, modelo in IA_SERVIDORES:
+    for modelo in IA_MODELOS:
+        url = IA_URL
         cuerpo_json = json.loads(cuerpo)
         cuerpo_json["model"] = modelo
         req = urllib.request.Request(url, data=json.dumps(cuerpo_json).encode(), headers={
-            "Authorization": f"Bearer {GH_TOKEN}",
+            "Authorization": f"Bearer {IA_CLAVE}",
             "Content-Type": "application/json",
-            "Accept": "application/json",
-            "X-GitHub-Api-Version": "2022-11-28",
         })
         try:
             resp = urllib.request.urlopen(req, timeout=90)
@@ -261,14 +259,14 @@ def preguntar_ia(lote, nombres):
                 bruto = f"[redirigido a {resp.geturl()} · {resp.status}] " + bruto
         except Exception as err:
             detalle = err.read().decode("utf-8", "replace")[:200] if hasattr(err, "read") else ""
-            errores.append(f"{url}: {err} {detalle}")
+            errores.append(f"{modelo}: {err} {detalle}")
             continue
         try:
             contenido = json.loads(bruto)["choices"][0]["message"]["content"] or ""
             contenido = re.sub(r"^```(?:json)?\s*|\s*```$", "", contenido.strip())
             return {x.get("id"): x for x in json.loads(contenido).get("noticias", [])}
         except Exception:
-            errores.append(f"{url}: respuesta rara: {bruto[:150]}")
+            errores.append(f"{modelo}: respuesta rara: {bruto[:150]}")
     raise ValueError(" | ".join(errores))
 
 
@@ -304,7 +302,7 @@ def enriquecer(noticias, nombres, estado):
     sin_ia = []
     for i in range(0, len(pendientes), IA_POR_PETICION):
         lote = pendientes[i:i + IA_POR_PETICION]
-        if not GH_TOKEN or IA["peticiones"] >= IA_PETICIONES_POR_RONDA or uso["peticiones"] >= IA_PETICIONES_POR_DIA:
+        if not IA_CLAVE or IA["peticiones"] >= IA_PETICIONES_POR_RONDA or uso["peticiones"] >= IA_PETICIONES_POR_DIA:
             sin_ia.extend(lote)
             continue
         try:
@@ -614,7 +612,7 @@ def main():
         "nuevas_en_esta_ronda": len(nuevas),
         "fuentes_ok": ok,
         "fuentes_fallidas": fallidas,
-        "ia": dict(IA),
+        "ia": dict(IA, clave="sí" if IA_CLAVE else "falta GEMINI_API_KEY"),
         "telegram": ("sin configurar" if not (TOKEN and CHAT) else
                      {"enviados": TG["enviados"], "errores": TG["errores"], "ultimo_error": TG["ultimo_error"]}),
     })
