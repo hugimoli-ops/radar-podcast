@@ -171,6 +171,9 @@ def leer_fuente(fuente):
 
 
 # ----------------------------------------------------------------- Telegram
+TG = {"enviados": 0, "errores": 0, "ultimo_error": ""}
+
+
 def telegram(texto, vista_previa=False):
     if not TOKEN or not CHAT:
         return False
@@ -182,9 +185,12 @@ def telegram(texto, vista_previa=False):
     }).encode()
     try:
         urllib.request.urlopen(f"https://api.telegram.org/bot{TOKEN}/sendMessage", data=datos, timeout=20).read()
+        TG["enviados"] += 1
         return True
     except Exception as err:
         print("Error enviando a Telegram:", err)
+        TG["errores"] += 1
+        TG["ultimo_error"] = f"{type(err).__name__}: {err}"[:200]
         return False
 
 
@@ -330,6 +336,10 @@ def main():
             if telegram(mensaje_resumen(r, iconos)) or not TOKEN:
                 avisados.add(r["id"])
 
+    # Al lanzarlo a mano con el botón "Run workflow", manda un mensaje de prueba
+    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+        telegram(f"✅ <b>Radar del Podcast funcionando</b>\n{ok}/{len(fuentes)} fuentes leídas · {len(nuevas)} noticias nuevas · {len(avisos)} avisos.")
+
     # 4. Guardar todo
     escribir_json(NOTICIAS, lista, compacto=True)
     estado.update({
@@ -346,6 +356,8 @@ def main():
         "nuevas_en_esta_ronda": len(nuevas),
         "fuentes_ok": ok,
         "fuentes_fallidas": fallidas,
+        "telegram": ("sin configurar" if not (TOKEN and CHAT) else
+                     {"enviados": TG["enviados"], "errores": TG["errores"], "ultimo_error": TG["ultimo_error"]}),
     })
     print(f"Fuentes OK: {ok}/{len(fuentes)} · nuevas: {len(nuevas)} · avisos: {len(avisos)} · resúmenes nuevos: {len(resumenes_nuevos)}")
     for nombre, err in fallidas.items():
