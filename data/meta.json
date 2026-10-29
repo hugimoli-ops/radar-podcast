@@ -1,13 +1,7 @@
 {
-  "actualizado": "2026-10-29T12:25:12+00:00",
-  "noticias": 867,
-  "nuevas_en_esta_ronda": 920,
-  "fuentes_ok": 73,
-  "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 404: Not Found",
-    "Casa Blanca": "HTTPError: HTTP Error 404: Not Found",
-    "Google DeepMind": "ParseError: not well-formed (invalid token): line 1, column 0",
-    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 404: Not Found",
-    "ESPN": "ParseError: no element found: line 1, column 0"
-  }
+  "actualizado": "2026-10-29T12:25:54+00:00",
+  "noticias": 958,
+  "nuevas_en_esta_ronda": 93,
+  "fuentes_ok": 78,
+  "fuentes_fallidas": {}
 }
