@@ -1,18 +1,19 @@
 {
-  "actualizado": "2026-10-29T15:38:28+00:00",
-  "noticias": 1439,
-  "nuevas_en_esta_ronda": 6,
+  "actualizado": "2026-10-29T15:39:35+00:00",
+  "noticias": 1442,
+  "nuevas_en_esta_ronda": 3,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 1,
-    "errores": 1,
-    "ultimo_error": "ValueError: https://models.github.ai/inference/chat/completions: respuesta rara: OK\r\n | https://models.inference.ai.azure.com/chat/completions: <urlopen error [Errno -2] Name or service not known>  ",
-    "traducidas": 6,
-    "error_traductor": ""
+    "peticiones": 0,
+    "errores": 0,
+    "ultimo_error": "",
+    "traducidas": 2,
+    "error_traductor": "",
+    "clave": "falta GEMINI_API_KEY"
   },
   "telegram": {
-    "enviados": 6,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": ""
   }
