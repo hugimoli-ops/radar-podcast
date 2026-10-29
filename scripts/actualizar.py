@@ -272,13 +272,19 @@ def mensaje_agrupado(lista, titulo, iconos):
     por_seccion = {}
     for n in lista[:15]:
         por_seccion.setdefault(n.get("seccion", ""), []).append(n)
+    puestas = 0
     for sec, items in por_seccion.items():
         ic = iconos.get(sec, "📰")
         for n in items:
             marca = "🔴 " if n.get("prioridad") == 2 else ""
-            lineas.append(f'{ic} {marca}<a href="{e(n.get("enlace", ""))}">{e(titular_limpio(n) if "titulo" in n else "")}</a>')
-    if len(lista) > 15:
-        lineas.append(f"\n…y {len(lista) - 15} más en la web.")
+            linea = f'{ic} {marca}<a href="{e(n.get("enlace", ""))}">{e(titular_limpio(n) if "titulo" in n else "")}</a>'
+            # Telegram corta a 4096 caracteres: si no cabe, se deja para la web
+            if len("\n".join(lineas)) + len(linea) > 3500:
+                break
+            lineas.append(linea)
+            puestas += 1
+    if len(lista) > puestas:
+        lineas.append(f"\n…y {len(lista) - puestas} más en la web.")
     if WEB:
         lineas.append(f'\n🌐 <a href="{e(enlace_web())}">Abrir la web</a>')
     return "\n".join(lineas)
