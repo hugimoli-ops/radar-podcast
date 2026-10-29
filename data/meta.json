@@ -1,7 +1,7 @@
 {
-  "actualizado": "2026-10-29T15:32:35+00:00",
-  "noticias": 1415,
-  "nuevas_en_esta_ronda": 5,
+  "actualizado": "2026-10-29T15:33:16+00:00",
+  "noticias": 1419,
+  "nuevas_en_esta_ronda": 9,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
@@ -12,7 +12,7 @@
     "error_traductor": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": ""
   }
