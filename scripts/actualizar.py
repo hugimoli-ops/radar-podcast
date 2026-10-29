@@ -245,9 +245,13 @@ def preguntar_ia(lote, nombres):
         "Content-Type": "application/json",
         "Accept": "application/json",
     })
-    respuesta = json.loads(urllib.request.urlopen(req, timeout=90).read())
-    contenido = respuesta["choices"][0]["message"]["content"]
-    return {x.get("id"): x for x in json.loads(contenido).get("noticias", [])}
+    bruto = urllib.request.urlopen(req, timeout=90).read().decode("utf-8", "replace")
+    try:
+        contenido = json.loads(bruto)["choices"][0]["message"]["content"] or ""
+        contenido = re.sub(r"^```(?:json)?\s*|\s*```$", "", contenido.strip())
+        return {x.get("id"): x for x in json.loads(contenido).get("noticias", [])}
+    except Exception as err:
+        raise ValueError(f"respuesta rara de la IA: {bruto[:300]}") from err
 
 
 def traducir(texto):
