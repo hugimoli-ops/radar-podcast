@@ -1,18 +1,18 @@
 {
-  "actualizado": "2026-10-29T15:31:37+00:00",
-  "noticias": 1410,
-  "nuevas_en_esta_ronda": 12,
+  "actualizado": "2026-10-29T15:32:35+00:00",
+  "noticias": 1415,
+  "nuevas_en_esta_ronda": 5,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
     "peticiones": 1,
     "errores": 1,
-    "ultimo_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0) ",
+    "ultimo_error": "ValueError: respuesta rara de la IA: OK\r\n ",
     "traducidas": 0,
     "error_traductor": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "telegram": {
-    "enviados": 11,
+    "enviados": 5,
     "errores": 0,
     "ultimo_error": ""
   }
