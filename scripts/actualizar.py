@@ -203,7 +203,7 @@ TEMAS = {
     "estudios": "🎓 ESTUDIOS",
     "otros": "🌍 OTROS",
 }
-IA = {"peticiones": 0, "errores": 0, "ultimo_error": "", "traducidas": 0}
+IA = {"peticiones": 0, "errores": 0, "ultimo_error": "", "traducidas": 0, "error_traductor": ""}
 
 INSTRUCCIONES_IA = """Eres el editor de noticias de un podcast español de amigos jóvenes (Zaragoza). Recibes titulares (a menudo en inglés) con su sección y una pista de prioridad por palabras clave.
 Para CADA noticia devuelve, en español de España, claro y sin tecnicismos:
@@ -281,8 +281,9 @@ def enriquecer(noticias, nombres, estado):
             res = preguntar_ia(lote, nombres)
         except Exception as err:
             IA["errores"] += 1
-            IA["ultimo_error"] = f"{type(err).__name__}: {err}"[:200]
-            print("Error de la IA:", err)
+            detalle = err.read().decode("utf-8", "replace")[:300] if hasattr(err, "read") else ""
+            IA["ultimo_error"] = f"{type(err).__name__}: {err} {detalle}"[:500]
+            print("Error de la IA:", err, detalle)
             sin_ia.extend(lote)
             continue
         for n in lote:
@@ -305,7 +306,8 @@ def enriquecer(noticias, nombres, estado):
             n["titulo_es"] = traducir(titular_limpio(n))
             IA["traducidas"] += 1
         except Exception as err:
-            IA["ultimo_error"] = f"traductor: {type(err).__name__}: {err}"[:200]
+            IA["error_traductor"] = f"{type(err).__name__}: {err}"[:200]
+            break
     for n in noticias:
         n.setdefault("nivel", {2: 5, 1: 4}.get(n.get("prioridad", 0), 2))
         n.setdefault("tema", n["seccion"] if n["seccion"] in TEMAS else "otros")
