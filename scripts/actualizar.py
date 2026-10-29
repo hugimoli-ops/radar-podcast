@@ -5,8 +5,9 @@ Robot que actualiza la web de noticias del podcast.
 Lo ejecuta GitHub Actions cada pocos minutos (ver .github/workflows/actualizar.yml):
   1. Lee las fuentes de fuentes.json (RSS/Atom).
   2. Guarda las noticias nuevas en data/noticias.json (lo que muestra la web).
-  3. Avisa por Telegram de las noticias importantes y de los resúmenes nuevos
-     que Claude haya escrito en data/resumenes.json.
+  3. Traduce y explica cada noticia con la IA gratuita de GitHub Models, le pone
+     un nivel (1-5) y un tema, y la manda a Telegram. Las de nivel 4-5 suenan y te mencionan.
+  4. Avisa también de los resúmenes nuevos que Claude escriba en data/resumenes.json.
 
 Solo usa la librería estándar de Python: no hay que instalar nada.
 """
@@ -18,6 +19,7 @@ import html
 import json
 import os
 import re
+import time
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -34,7 +36,13 @@ META = DATA / "meta.json"
 DIAS_A_GUARDAR = 10          # las noticias más antiguas se borran de la web
 MAX_NOTICIAS = 2500
 MAX_POR_FUENTE = 15
-MAX_AVISOS_POR_RONDA = 5     # más de esto se agrupa en un solo mensaje
+MAX_MENSAJES_POR_RONDA = 40  # más de esto se agrupa en un solo mensaje
+MENCION = "@hugoo20"         # se te menciona en las noticias importantes y urgentes
+NIVEL_MENCION = 4            # desde qué nivel (1-5) se te menciona y suena
+IA_MODELO = "openai/gpt-4o-mini"
+IA_POR_PETICION = 10         # noticias que se mandan juntas a la IA
+IA_PETICIONES_POR_RONDA = 4
+IA_PETICIONES_POR_DIA = 140  # el plan gratis de GitHub Models da 150 al día
 HORAS_SILENCIO = (0, 8)      # de 00:00 a 08:00 (hora de Madrid) no se envía nada; se junta en un resumen
 ZONA = "Europe/Madrid"
 
@@ -42,6 +50,7 @@ UA = "Mozilla/5.0 (compatible; PodcastNoticiasBot/1.0; +https://github.com)"
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
 CHAT = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 WEB = os.environ.get("SITE_URL", "").strip()
+GH_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 
 
 # ----------------------------------------------------------------- utilidades
@@ -170,6 +179,142 @@ def leer_fuente(fuente):
         return fuente, [], f"{type(err).__name__}: {err}"[:200]
 
 
+# ----------------------------------------------------------------- niveles y temas
+NIVELES = {
+    5: ("🟥🟥🟥🟥🟥", "URGENTE"),
+    4: ("🟧🟧🟧🟧⬜", "IMPORTANTE"),
+    3: ("🟨🟨🟨⬜⬜", "INTERESANTE"),
+    2: ("🟩🟩⬜⬜⬜", "NORMAL"),
+    1: ("⬜⬜⬜⬜⬜", "POCO RELEVANTE"),
+}
+TEMAS = {
+    "inversiones": "💰 INVERSIONES",
+    "politica": "🏛️ POLÍTICA",
+    "emprendimiento": "🚀 EMPRENDIMIENTO",
+    "ia": "🤖 IA",
+    "economia": "📊 ECONOMÍA",
+    "zaragoza": "📍 ZARAGOZA Y ESPAÑA",
+    "cine": "🎬 CINE",
+    "moda": "👟 MODA",
+    "musica": "🎵 MÚSICA",
+    "deportes": "⚽ DEPORTES",
+    "videojuegos": "🎮 VIDEOJUEGOS",
+    "ciencia": "🔭 CIENCIA",
+    "estudios": "🎓 ESTUDIOS",
+    "otros": "🌍 OTROS",
+}
+IA = {"peticiones": 0, "errores": 0, "ultimo_error": "", "traducidas": 0}
+
+INSTRUCCIONES_IA = """Eres el editor de noticias de un podcast español de amigos jóvenes (Zaragoza). Recibes titulares (a menudo en inglés) con su sección y una pista de prioridad por palabras clave.
+Para CADA noticia devuelve, en español de España, claro y sin tecnicismos:
+- "titulo": el titular traducido y natural (máx. 120 caracteres).
+- "que_pasa": 1-2 frases explicando la noticia como a alguien que no sabe del tema. No inventes datos que no estén en el titular o el texto; si falta info, dilo con prudencia ("según el titular...").
+- "por_que_importa": 1 frase con la consecuencia práctica (dinero, mercados, empleo, su vida, el podcast).
+- "tema": uno de inversiones, politica, emprendimiento, ia, economia, zaragoza, cine, moda, musica, deportes, videojuegos, ciencia, estudios, otros. Trump, gobiernos, guerras y leyes = politica (salvo que sea claramente de mercados = inversiones).
+- "nivel" de 1 a 5:
+  5 URGENTE: mueve mercados o el mundo YA. Salidas a bolsa grandes (Anthropic, OpenAI, SpaceX...), compras de más de 5.000 M$, órdenes o aranceles de Trump, caídas o subidas récord, decisiones de la Fed/BCE, lanzamiento de un modelo de IA puntero, incidente grave de IA.
+  4 IMPORTANTE: noticia relevante de inversiones, IA, emprendimiento o política con impacto claro (rondas grandes, resultados de grandes empresas, nuevas leyes en España, fichajes o eventos grandes en Zaragoza).
+  3 INTERESANTE: buen tema de conversación para el podcast pero sin urgencia.
+  2 NORMAL: noticia corriente.
+  1 POCO RELEVANTE: local de otro país, nicho, promocional, opinión sin noticia o refrito.
+Sé exigente: el 5 es raro (pocas al día). Las notas de prensa de bufetes, despachos o empresas pequeñas no pasan de 2.
+Responde SOLO con JSON: {"noticias": [{"id": "...", "titulo": "...", "que_pasa": "...", "por_que_importa": "...", "tema": "...", "nivel": 3}]}"""
+
+
+def preguntar_ia(lote, nombres):
+    entrada = [{
+        "id": n["id"],
+        "titular": n["titulo"],
+        "texto": (n.get("resumen") or "")[:300],
+        "medio": n.get("medio", ""),
+        "seccion": nombres.get(n["seccion"], n["seccion"]),
+        "pista_prioridad": ["normal", "importante", "urgente"][n.get("prioridad", 0)],
+        "palabras_clave": n.get("motivos", [])[:4],
+    } for n in lote]
+    cuerpo = json.dumps({
+        "model": IA_MODELO,
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"},
+        "messages": [
+            {"role": "system", "content": INSTRUCCIONES_IA},
+            {"role": "user", "content": json.dumps(entrada, ensure_ascii=False)},
+        ],
+    }).encode()
+    req = urllib.request.Request("https://models.github.ai/inference/chat/completions", data=cuerpo, headers={
+        "Authorization": f"Bearer {GH_TOKEN}",
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    })
+    respuesta = json.loads(urllib.request.urlopen(req, timeout=90).read())
+    contenido = respuesta["choices"][0]["message"]["content"]
+    return {x.get("id"): x for x in json.loads(contenido).get("noticias", [])}
+
+
+def traducir(texto):
+    # Traductor gratuito de Google (sin clave). Se usa si la IA no está disponible.
+    url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(
+        {"client": "gtx", "sl": "auto", "tl": "es", "dt": "t", "q": texto})
+    datos = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=15).read())
+    if datos[2] == "es":
+        return texto
+    return "".join(trozo[0] for trozo in datos[0] if trozo and trozo[0])
+
+
+def enriquecer(noticias, nombres, estado):
+    """Traduce y explica las noticias nuevas y les pone nivel (1-5) y tema."""
+    hoy = hora_madrid().strftime("%Y-%m-%d")
+    uso = estado.get("ia_uso", {})
+    if uso.get("dia") != hoy:
+        uso = {"dia": hoy, "peticiones": 0}
+    pendientes = list(noticias)
+    # Primero lo que tiene pinta de importante, por si no da para todo
+    pendientes.sort(key=lambda n: n.get("prioridad", 0), reverse=True)
+    sin_ia = []
+    for i in range(0, len(pendientes), IA_POR_PETICION):
+        lote = pendientes[i:i + IA_POR_PETICION]
+        if not GH_TOKEN or IA["peticiones"] >= IA_PETICIONES_POR_RONDA or uso["peticiones"] >= IA_PETICIONES_POR_DIA:
+            sin_ia.extend(lote)
+            continue
+        try:
+            IA["peticiones"] += 1
+            uso["peticiones"] += 1
+            res = preguntar_ia(lote, nombres)
+        except Exception as err:
+            IA["errores"] += 1
+            IA["ultimo_error"] = f"{type(err).__name__}: {err}"[:200]
+            print("Error de la IA:", err)
+            sin_ia.extend(lote)
+            continue
+        for n in lote:
+            r = res.get(n["id"])
+            if not r:
+                sin_ia.append(n)
+                continue
+            n["titulo_es"] = (r.get("titulo") or "").strip()[:200]
+            n["que_pasa"] = (r.get("que_pasa") or "").strip()[:500]
+            n["por_que_importa"] = (r.get("por_que_importa") or "").strip()[:400]
+            if r.get("tema") in TEMAS:
+                n["tema"] = r["tema"]
+            try:
+                n["nivel"] = max(1, min(5, int(r.get("nivel"))))
+            except Exception:
+                pass
+    for n in sin_ia[:80]:
+        # Sin IA: se traduce el titular y el nivel sale de las palabras clave
+        try:
+            n["titulo_es"] = traducir(titular_limpio(n))
+            IA["traducidas"] += 1
+        except Exception as err:
+            IA["ultimo_error"] = f"traductor: {type(err).__name__}: {err}"[:200]
+    for n in noticias:
+        n.setdefault("nivel", {2: 5, 1: 4}.get(n.get("prioridad", 0), 2))
+        n.setdefault("tema", n["seccion"] if n["seccion"] in TEMAS else "otros")
+        # Las palabras clave fuertes nunca bajan de "importante"
+        if n.get("prioridad", 0) == 2:
+            n["nivel"] = max(n["nivel"], 4)
+    estado["ia_uso"] = uso
+
+
 # ----------------------------------------------------------------- Telegram
 TG = {"enviados": 0, "errores": 0, "ultimo_error": ""}
 
@@ -233,22 +378,21 @@ def titular_limpio(n):
     return re.sub(r"\s+-\s+[^-]{2,40}$", "", t) if "news.google" in n.get("enlace", "") else t
 
 
-def mensaje_noticia(n, iconos, nombres):
-    ic = iconos.get(n["seccion"], "📰")
-    nivel = "🔴 <b>URGENTE</b>" if n.get("prioridad") == 2 else "🟠 <b>IMPORTANTE</b>"
-    lineas = [
-        f"{nivel} · {ic} {e(nombres.get(n['seccion'], n['seccion']).upper())}",
-        "",
-        f"<b>{e(titular_limpio(n))}</b>",
-        "",
-        f"📰 {e(n.get('medio') or n.get('fuente', ''))}" + (f" · 🕒 {hora_de(n)}" if hora_de(n) else ""),
-    ]
-    if n.get("motivos"):
-        lineas.append(f"🏷️ Salta por: {e(', '.join(n['motivos'][:4]))}")
-    enlaces = f'🔗 <a href="{e(n["enlace"])}">Leer la noticia</a>'
+def mensaje_noticia(n, avisar=True):
+    barra, etiqueta = NIVELES.get(n.get("nivel", 2), NIVELES[2])
+    cabecera = f"{barra} <b>{etiqueta}</b>"
+    if avisar and n.get("nivel", 0) >= NIVEL_MENCION and MENCION:
+        cabecera += f" · {MENCION}"
+    lineas = [cabecera, f"<b>{e(TEMAS.get(n.get('tema'), '🌍 OTROS'))}</b>", "", f"<b>{e(n.get('titulo_es') or titular_limpio(n))}</b>"]
+    if n.get("que_pasa"):
+        lineas += ["", f"📝 <b>Qué pasa:</b> {e(n['que_pasa'])}"]
+    if n.get("por_que_importa"):
+        lineas.append(f"❗ <b>Por qué importa:</b> {e(n['por_que_importa'])}")
+    pie = f"📰 {e(n.get('medio') or n.get('fuente', ''))}" + (f" · 🕒 {hora_de(n)}" if hora_de(n) else "")
+    enlaces = f'🔗 <a href="{e(n["enlace"])}">Leer</a>'
     if WEB:
-        enlaces += f' · <a href="{e(enlace_web("n-" + n["id"]))}">Ver en la web</a>'
-    lineas += ["", enlaces]
+        enlaces += f' · 🌐 <a href="{e(enlace_web("n-" + n["id"]))}">Web</a>'
+    lineas += ["", pie, enlaces]
     return "\n".join(lineas)
 
 
@@ -276,8 +420,10 @@ def mensaje_agrupado(lista, titulo, iconos):
     for sec, items in por_seccion.items():
         ic = iconos.get(sec, "📰")
         for n in items:
-            marca = "🔴 " if n.get("prioridad") == 2 else ""
-            linea = f'{ic} {marca}<a href="{e(n.get("enlace", ""))}">{e(titular_limpio(n) if "titulo" in n else "")}</a>'
+            marca = NIVELES.get(n.get("nivel", 2), NIVELES[2])[0][:1] + " "
+            ic = TEMAS.get(n.get("tema"), ic).split(" ")[0]
+            titulo = n.get("titulo_es") or (titular_limpio(n) if "titulo" in n else "")
+            linea = f'{marca}{ic} <a href="{e(n.get("enlace", ""))}">{e(titulo)}</a>'
             # Telegram corta a 4096 caracteres: si no cabe, se deja para la web
             if len("\n".join(lineas)) + len(linea) > 3500:
                 break
@@ -362,53 +508,61 @@ def main():
     lista.sort(key=lambda n: n["fecha"], reverse=True)
     lista = lista[:MAX_NOTICIAS]
 
-    # 3. Decidir qué avisos mandar
-    avisos = []
+    # 3. Clasificar las noticias nuevas (quitando las repetidas en varios medios)
+    unicas = []
     for n in sorted(nuevas, key=lambda n: n["fecha"], reverse=True):
         clave = clave_titulo(n["titulo"])
         repetida = clave in claves_vistas
         claves_vistas.add(clave)
         n["prioridad"] = 0 if repetida else prioridad(n, cfg, fuentes_alerta, patrones, urgentes)
-        n["importante"] = n["prioridad"] > 0
-        if n["importante"] and not primera_vez:
-            avisos.append(n)
-    # Primero lo urgente, luego lo más reciente
-    avisos.sort(key=lambda n: (n["prioridad"], n["fecha"]), reverse=True)
-    marcadas = {n["id"] for n in nuevas if n.get("importante")}
+        if not repetida:
+            unicas.append(n)
+    if not primera_vez:
+        enriquecer(unicas, nombres, estado)
+    for n in unicas:
+        n["importante"] = n.get("nivel", 0) >= NIVEL_MENCION
+    datos_nuevos = {n["id"]: n for n in unicas}
     for n in lista:
-        if n["id"] in marcadas:
-            n["importante"] = True
+        if n["id"] in datos_nuevos:
+            n.update({k: v for k, v in datos_nuevos[n["id"]].items()
+                      if k in ("titulo_es", "que_pasa", "por_que_importa", "nivel", "tema", "importante", "motivos")})
+    # De menos a más importante: lo importante queda abajo del todo, que es lo que ves primero
+    avisos = sorted(unicas, key=lambda n: (n.get("nivel", 2), n["fecha"]))
 
     avisados = set(estado.get("resumenes_avisados", []))
     resumenes_nuevos = [r for r in resumenes if r.get("id") and r["id"] not in avisados]
 
     h = hora_madrid().hour
-    silencio = HORAS_SILENCIO[0] <= h < HORAS_SILENCIO[1]
+    noche = HORAS_SILENCIO[0] <= h < HORAS_SILENCIO[1]
 
     if primera_vez:
         telegram("✅ <b>Robot de noticias conectado.</b>\nA partir de ahora te aviso aquí de lo importante." + (f'\n<a href="{e(enlace_web())}">Abrir la web</a>' if WEB else ""))
         avisados.update(r["id"] for r in resumenes if r.get("id"))
-    elif silencio:
-        pendientes.extend({k: n.get(k) for k in ("titulo", "enlace", "seccion", "prioridad", "medio")} for n in avisos)
-        pendientes = pendientes[-40:]
     else:
-        if pendientes:
-            telegram(mensaje_agrupado(pendientes, f"🌅 Mientras dormías ({len(pendientes)})", iconos))
+        if not noche and pendientes:
+            telegram(mensaje_agrupado(pendientes, f"🌅 Lo importante mientras dormías ({len(pendientes)}) · {MENCION}", iconos))
             pendientes = []
-        # Urgentes: un mensaje cada una, con sonido. Importantes: un mensaje cada una, sin sonido.
-        # Lo que pase del máximo va en un único mensaje agrupado, sin sonido.
-        sueltas = avisos[:MAX_AVISOS_POR_RONDA]
+        # Todas las noticias llegan, sin sonido. Las importantes (nivel 4-5) suenan y te mencionan,
+        # salvo de noche: entonces llegan en silencio y por la mañana te mando la lista.
+        extra = avisos[:-MAX_MENSAJES_POR_RONDA] if len(avisos) > MAX_MENSAJES_POR_RONDA else []
+        sueltas = avisos[-MAX_MENSAJES_POR_RONDA:]
+        if extra:
+            telegram(mensaje_agrupado(extra, f"🗞️ Otras {len(extra)} noticias", iconos), silencioso=True)
         for n in sueltas:
-            telegram(mensaje_noticia(n, iconos, nombres), vista_previa=True, silencioso=n["prioridad"] < 2)
-        if len(avisos) > MAX_AVISOS_POR_RONDA:
-            telegram(mensaje_agrupado(avisos[MAX_AVISOS_POR_RONDA:], "📌 Más noticias importantes", iconos), silencioso=True)
+            importante = n.get("nivel", 0) >= NIVEL_MENCION
+            telegram(mensaje_noticia(n, avisar=importante and not noche),
+                     vista_previa=importante, silencioso=not importante or noche)
+            if importante and noche:
+                pendientes.append({k: n.get(k) for k in ("titulo", "titulo_es", "enlace", "seccion", "tema", "nivel", "medio")})
+            time.sleep(1.1)  # Telegram no deja más de ~1 mensaje por segundo
+        pendientes = pendientes[-40:]
         for r in resumenes_nuevos[:5]:
             if telegram(mensaje_resumen(r, iconos)) or not TOKEN:
                 avisados.add(r["id"])
 
     # Al lanzarlo a mano con el botón "Run workflow", manda un mensaje de prueba
     if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
-        telegram(f"✅ <b>Radar del Podcast funcionando</b>\n{ok}/{len(fuentes)} fuentes leídas · {len(nuevas)} noticias nuevas · {len(avisos)} avisos.")
+        telegram(f"✅ <b>Radar del Podcast funcionando</b>\n{ok}/{len(fuentes)} fuentes leídas · {len(nuevas)} noticias nuevas · {sum(1 for n in avisos if n.get('nivel', 0) >= NIVEL_MENCION)} importantes.")
 
     # 4. Guardar todo
     escribir_json(NOTICIAS, lista, compacto=True)
@@ -426,6 +580,7 @@ def main():
         "nuevas_en_esta_ronda": len(nuevas),
         "fuentes_ok": ok,
         "fuentes_fallidas": fallidas,
+        "ia": dict(IA),
         "telegram": ("sin configurar" if not (TOKEN and CHAT) else
                      {"enviados": TG["enviados"], "errores": TG["errores"], "ultimo_error": TG["ultimo_error"]}),
     })

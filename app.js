@@ -86,13 +86,16 @@
     }));
   }
 
+  const NIVELES = { 5: '🟥🟥🟥🟥🟥 URGENTE', 4: '🟧🟧🟧🟧⬜ IMPORTANTE', 3: '🟨🟨🟨⬜⬜', 2: '🟩🟩⬜⬜⬜', 1: '⬜⬜⬜⬜⬜' };
+
   function tarjetaNoticia(n) {
     const s = seccion(n.seccion);
     const exp = resumenes.find((r) => r.id === n.id || r.noticia_id === n.id);
     return `<article class="tarjeta${n.importante ? ' destacada' : ''}" id="n-${esc(n.id)}">
-      <div class="meta"><span class="etiqueta">${s.icono} ${esc(s.nombre)}</span><span>${esc(n.medio)}</span><span>${hace(n.fecha)}</span>${n.importante ? '<span>⭐ importante</span>' : ''}</div>
-      <h2 class="titulo"><a href="${esc(n.enlace)}" target="_blank" rel="noopener">${esc(n.titulo)}</a></h2>
-      ${n.resumen ? `<p class="resumen">${esc(n.resumen)}</p>` : ''}
+      <div class="meta">${n.nivel ? `<span title="Nivel ${n.nivel} de 5">${NIVELES[n.nivel] || ''}</span>` : ''}<span class="etiqueta">${s.icono} ${esc(s.nombre)}</span><span>${esc(n.medio)}</span><span>${hace(n.fecha)}</span></div>
+      <h2 class="titulo"><a href="${esc(n.enlace)}" target="_blank" rel="noopener">${esc(n.titulo_es || n.titulo)}</a></h2>
+      ${n.que_pasa ? `<p class="resumen">📝 ${esc(n.que_pasa)}</p>` : (n.resumen ? `<p class="resumen">${esc(n.resumen)}</p>` : '')}
+      ${n.por_que_importa ? `<p class="resumen">❗ <b>Por qué importa:</b> ${esc(n.por_que_importa)}</p>` : ''}
       ${exp ? `<button class="boton-explicar" data-r="${esc(exp.id)}">🧠 Ver explicación</button>` : ''}
     </article>`;
   }
@@ -140,11 +143,11 @@
       html = dossiers.map(tarjetaDossier).join('');
     } else if (actual === 'destacadas') {
       const rs = resumenes.filter((r) => coincide(`${r.titulo} ${r.resumen || ''}`)).slice(0, 10);
-      const ns = noticias.filter((n) => n.importante && coincide(`${n.titulo} ${n.medio}`));
+      const ns = noticias.filter((n) => n.importante && coincide(`${n.titulo} ${n.titulo_es || ''} ${n.medio}`));
       total = rs.length + ns.length;
       html = rs.map(tarjetaResumen).join('') + ns.slice(0, 150).map(tarjetaNoticia).join('');
     } else {
-      const ns = noticias.filter((n) => n.seccion === actual && coincide(`${n.titulo} ${n.medio} ${n.resumen || ''}`));
+      const ns = noticias.filter((n) => n.seccion === actual && coincide(`${n.titulo} ${n.titulo_es || ''} ${n.medio} ${n.resumen || ''} ${n.que_pasa || ''}`));
       const rs = resumenes.filter((r) => r.seccion === actual && coincide(r.titulo)).slice(0, 5);
       total = ns.length + rs.length;
       html = rs.map(tarjetaResumen).join('') + ns.slice(0, 200).map(tarjetaNoticia).join('');
