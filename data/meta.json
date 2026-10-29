@@ -1,18 +1,18 @@
 {
-  "actualizado": "2026-10-29T15:34:16+00:00",
-  "noticias": 1420,
-  "nuevas_en_esta_ronda": 1,
+  "actualizado": "2026-10-29T15:35:43+00:00",
+  "noticias": 1425,
+  "nuevas_en_esta_ronda": 6,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
     "peticiones": 1,
     "errores": 1,
     "ultimo_error": "ValueError: https://models.github.ai/inference/chat/completions: respuesta rara: OK\r\n | https://models.inference.ai.azure.com/chat/completions: <urlopen error [Errno -2] Name or service not known>  ",
-    "traducidas": 1,
+    "traducidas": 6,
     "error_traductor": ""
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 7,
     "errores": 0,
     "ultimo_error": ""
   }
