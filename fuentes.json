@@ -134,7 +134,7 @@
     {
       "nombre": "Yahoo Finance",
       "seccion": "inversiones",
-      "url": "https://finance.yahoo.com/news/rssindex"
+      "url": "https://news.google.com/rss/search?q=site:finance.yahoo.com+when:1d&hl=en-US&gl=US&ceid=US:en"
     },
     {
       "nombre": "Reserva Federal",
@@ -150,7 +150,7 @@
     {
       "nombre": "Casa Blanca",
       "seccion": "inversiones",
-      "url": "https://www.whitehouse.gov/feed/"
+      "url": "https://news.google.com/rss/search?q=site:whitehouse.gov+when:2d&hl=en-US&gl=US&ceid=US:en"
     },
     {
       "nombre": "Trump en Truth Social (archivo no oficial)",
@@ -260,7 +260,7 @@
     {
       "nombre": "Google DeepMind",
       "seccion": "ia",
-      "url": "https://deepmind.google/blog/rss.xml",
+      "url": "https://news.google.com/rss/search?q=site:deepmind.google+when:7d&hl=en-US&gl=US&ceid=US:en",
       "alerta": true
     },
     {
@@ -316,7 +316,7 @@
     {
       "nombre": "Heraldo (Zaragoza)",
       "seccion": "zaragoza",
-      "url": "https://www.heraldo.es/rss/zaragoza/"
+      "url": "https://news.google.com/rss/search?q=site:heraldo.es+Zaragoza+when:1d&hl=es&gl=ES&ceid=ES:es"
     },
     {
       "nombre": "Google News: El Periódico de Aragón",
@@ -417,7 +417,7 @@
     {
       "nombre": "ESPN",
       "seccion": "deportes",
-      "url": "https://www.espn.com/espn/rss/news",
+      "url": "https://news.google.com/rss/search?q=site:espn.com+when:1d&hl=en-US&gl=US&ceid=US:en",
       "max": 10
     },
     {
