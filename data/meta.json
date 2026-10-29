@@ -1,12 +1,12 @@
 {
-  "actualizado": "2026-10-29T15:20:34+00:00",
-  "noticias": 1351,
-  "nuevas_en_esta_ronda": 324,
+  "actualizado": "2026-10-29T15:21:33+00:00",
+  "noticias": 1375,
+  "nuevas_en_esta_ronda": 26,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "telegram": {
-    "enviados": 6,
-    "errores": 1,
-    "ultimo_error": "HTTPError: HTTP Error 400: Bad Request"
+    "enviados": 2,
+    "errores": 0,
+    "ultimo_error": ""
   }
 }
