@@ -40,6 +40,10 @@ MAX_MENSAJES_POR_RONDA = 40  # más de esto se agrupa en un solo mensaje
 MENCION = "@hugoo20"         # se te menciona en las noticias importantes y urgentes
 NIVEL_MENCION = 4            # desde qué nivel (1-5) se te menciona y suena
 IA_MODELO = "openai/gpt-4o-mini"
+IA_SERVIDORES = [  # se prueba en orden
+    ("https://models.github.ai/inference/chat/completions", IA_MODELO),
+    ("https://models.inference.ai.azure.com/chat/completions", "gpt-4o-mini"),
+]
 IA_POR_PETICION = 10         # noticias que se mandan juntas a la IA
 IA_PETICIONES_POR_RONDA = 4
 IA_PETICIONES_POR_DIA = 140  # el plan gratis de GitHub Models da 150 al día
@@ -240,28 +244,49 @@ def preguntar_ia(lote, nombres):
             {"role": "user", "content": json.dumps(entrada, ensure_ascii=False)},
         ],
     }).encode()
-    req = urllib.request.Request("https://models.github.ai/inference/chat/completions", data=cuerpo, headers={
-        "Authorization": f"Bearer {GH_TOKEN}",
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-    })
-    bruto = urllib.request.urlopen(req, timeout=90).read().decode("utf-8", "replace")
-    try:
-        contenido = json.loads(bruto)["choices"][0]["message"]["content"] or ""
-        contenido = re.sub(r"^```(?:json)?\s*|\s*```$", "", contenido.strip())
-        return {x.get("id"): x for x in json.loads(contenido).get("noticias", [])}
-    except Exception as err:
-        raise ValueError(f"respuesta rara de la IA: {bruto[:300]}") from err
+    errores = []
+    for url, modelo in IA_SERVIDORES:
+        cuerpo_json = json.loads(cuerpo)
+        cuerpo_json["model"] = modelo
+        req = urllib.request.Request(url, data=json.dumps(cuerpo_json).encode(), headers={
+            "Authorization": f"Bearer {GH_TOKEN}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        })
+        try:
+            bruto = urllib.request.urlopen(req, timeout=90).read().decode("utf-8", "replace")
+        except Exception as err:
+            detalle = err.read().decode("utf-8", "replace")[:200] if hasattr(err, "read") else ""
+            errores.append(f"{url}: {err} {detalle}")
+            continue
+        try:
+            contenido = json.loads(bruto)["choices"][0]["message"]["content"] or ""
+            contenido = re.sub(r"^```(?:json)?\s*|\s*```$", "", contenido.strip())
+            return {x.get("id"): x for x in json.loads(contenido).get("noticias", [])}
+        except Exception:
+            errores.append(f"{url}: respuesta rara: {bruto[:150]}")
+    raise ValueError(" | ".join(errores))
 
 
 def traducir(texto):
     # Traductor gratuito de Google (sin clave). Se usa si la IA no está disponible.
     url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(
         {"client": "gtx", "sl": "auto", "tl": "es", "dt": "t", "q": texto})
-    datos = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=15).read())
-    if datos[2] == "es":
-        return texto
-    return "".join(trozo[0] for trozo in datos[0] if trozo and trozo[0])
+    try:
+        datos = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=15).read())
+        if datos[2] == "es":
+            return texto
+        return "".join(trozo[0] for trozo in datos[0] if trozo and trozo[0])
+    except Exception:
+        # Plan B: MyMemory (gratis, unos 5.000 caracteres al día)
+        if re.search(r"[áéíóúñ¿¡]", texto):
+            return texto
+        url = "https://api.mymemory.translated.net/get?" + urllib.parse.urlencode({"q": texto[:450], "langpair": "en|es"})
+        datos = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=15).read())
+        if datos.get("responseStatus") != 200:
+            raise ValueError(datos.get("responseDetails", "MyMemory sin respuesta"))
+        return html.unescape(datos["responseData"]["translatedText"])
 
 
 def enriquecer(noticias, nombres, estado):
