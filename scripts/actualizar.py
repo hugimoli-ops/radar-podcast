@@ -38,7 +38,7 @@ MAX_NOTICIAS = 2500
 MAX_POR_FUENTE = 15
 MAX_MENSAJES_POR_RONDA = 40  # más de esto se agrupa en un solo mensaje
 MENCION = "@hugoo20"         # se te menciona en las noticias importantes y urgentes
-NIVEL_MENCION = 4            # desde qué nivel (1-5) se te menciona y suena
+NIVEL_MENCION = 5            # solo las URGENTES te mencionan y suenan
 # IA gratuita de Google (Gemini). La clave se saca gratis en https://aistudio.google.com/apikey
 # y se guarda en GitHub como secreto GEMINI_API_KEY. Se prueban los modelos en orden.
 IA_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
@@ -215,12 +215,15 @@ Para CADA noticia devuelve, en español de España, claro y sin tecnicismos:
 - "por_que_importa": 1 frase con la consecuencia práctica (dinero, mercados, empleo, su vida, el podcast).
 - "tema": uno de inversiones, politica, emprendimiento, ia, economia, zaragoza, cine, moda, musica, deportes, videojuegos, ciencia, estudios, otros. Trump, gobiernos, guerras y leyes = politica (salvo que sea claramente de mercados = inversiones).
 - "nivel" de 1 a 5:
-  5 URGENTE: mueve mercados o el mundo YA. Salidas a bolsa grandes (Anthropic, OpenAI, SpaceX...), compras de más de 5.000 M$, órdenes o aranceles de Trump, caídas o subidas récord, decisiones de la Fed/BCE, lanzamiento de un modelo de IA puntero, incidente grave de IA.
-  4 IMPORTANTE: noticia relevante de inversiones, IA, emprendimiento o política con impacto claro (rondas grandes, resultados de grandes empresas, nuevas leyes en España, fichajes o eventos grandes en Zaragoza).
+  5 URGENTE: SOLO estos casos, y nada más:
+    a) Caídas grandes y repentinas (desplome, crash, peor día en meses/años) de acciones de empresas muy conocidas, de índices, de criptomonedas (Bitcoin, Ethereum...) o de ETFs. Las subidas NO son urgentes.
+    b) Reuniones, anuncios, discursos, órdenes ejecutivas o aranceles de Donald Trump.
+    c) Salidas a bolsa (OPV/IPO, S-1) de empresas MUY grandes y conocidas por cualquiera (tipo Anthropic, OpenAI, SpaceX, Stripe, Shein, Revolut...). Si es una empresa que un joven español no conoce, NO es urgente.
+  4 IMPORTANTE: todo lo demás que sea relevante: compras de empresas, rondas grandes, resultados de grandes empresas, subidas récord, Fed/BCE, lanzamientos e incidentes de IA, leyes en España, eventos grandes en Zaragoza, etc.
   3 INTERESANTE: buen tema de conversación para el podcast pero sin urgencia.
   2 NORMAL: noticia corriente.
   1 POCO RELEVANTE: local de otro país, nicho, promocional, opinión sin noticia o refrito.
-Sé exigente: el 5 es raro (pocas al día). Las notas de prensa de bufetes, despachos o empresas pequeñas no pasan de 2.
+Sé muy exigente: el 5 es raro (pocas al día) y si dudas, pon 4. Las notas de prensa de bufetes, despachos o empresas pequeñas no pasan de 2.
 Responde SOLO con JSON: {"noticias": [{"id": "...", "titulo": "...", "que_pasa": "...", "por_que_importa": "...", "tema": "...", "nivel": 3}]}"""
 
 
@@ -339,7 +342,8 @@ def enriquecer(noticias, nombres, estado):
             IA["error_traductor"] = f"{type(err).__name__}: {err}"[:200]
             break
     for n in noticias:
-        n.setdefault("nivel", {2: 5, 1: 4}.get(n.get("prioridad", 0), 2))
+        # Sin IA no se marca nada como urgente: las palabras clave solo llegan a "importante"
+        n.setdefault("nivel", 4 if n.get("prioridad", 0) >= 1 else 2)
         n.setdefault("tema", n["seccion"] if n["seccion"] in TEMAS else "otros")
         # Las palabras clave fuertes nunca bajan de "importante"
         if n.get("prioridad", 0) == 2:
@@ -552,7 +556,7 @@ def main():
     if not primera_vez:
         enriquecer(unicas, nombres, estado)
     for n in unicas:
-        n["importante"] = n.get("nivel", 0) >= NIVEL_MENCION
+        n["importante"] = n.get("nivel", 0) >= 4  # destacadas en la web
     datos_nuevos = {n["id"]: n for n in unicas}
     for n in lista:
         if n["id"] in datos_nuevos:
@@ -594,7 +598,7 @@ def main():
 
     # Al lanzarlo a mano con el botón "Run workflow", manda un mensaje de prueba
     if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
-        telegram(f"✅ <b>Radar del Podcast funcionando</b>\n{ok}/{len(fuentes)} fuentes leídas · {len(nuevas)} noticias nuevas · {sum(1 for n in avisos if n.get('nivel', 0) >= NIVEL_MENCION)} importantes.")
+        telegram(f"✅ <b>Radar del Podcast funcionando</b>\n{ok}/{len(fuentes)} fuentes leídas · {len(nuevas)} noticias nuevas · {sum(1 for n in avisos if n.get('nivel', 0) >= NIVEL_MENCION)} urgentes.")
 
     # 4. Guardar todo
     escribir_json(NOTICIAS, lista, compacto=True)
