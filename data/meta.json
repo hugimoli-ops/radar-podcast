@@ -1,17 +1,18 @@
 {
-  "actualizado": "2026-10-29T15:30:01+00:00",
-  "noticias": 1398,
-  "nuevas_en_esta_ronda": 24,
+  "actualizado": "2026-10-29T15:30:52+00:00",
+  "noticias": 1401,
+  "nuevas_en_esta_ronda": 3,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 2,
-    "errores": 2,
-    "ultimo_error": "traductor: HTTPError: HTTP Error 429: Too Many Requests",
-    "traducidas": 0
+    "peticiones": 1,
+    "errores": 1,
+    "ultimo_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0) ",
+    "traducidas": 0,
+    "error_traductor": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "telegram": {
-    "enviados": 20,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": ""
   }
