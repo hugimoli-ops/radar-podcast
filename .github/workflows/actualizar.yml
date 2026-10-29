@@ -4,7 +4,7 @@ name: Actualizar noticias
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # cada 10 minutos (GitHub a veces se retrasa unos minutos)
+    - cron: "3-59/10 * * * *"   # cada 10 minutos (GitHub a veces se retrasa unos minutos)
   workflow_dispatch:          # botón "Run workflow" para lanzarlo a mano
   push:
     branches: [main]          # también cuando se suben cambios (p. ej. resúmenes nuevos de Claude)
