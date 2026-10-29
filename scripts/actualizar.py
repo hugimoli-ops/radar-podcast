@@ -217,7 +217,7 @@ Para CADA noticia devuelve, en español de España, claro y sin tecnicismos:
 - "nivel" de 1 a 5:
   5 URGENTE: SOLO estos casos, y nada más:
     a) Caídas grandes y repentinas (desplome, crash, peor día en meses/años) de acciones de empresas muy conocidas, de índices, de criptomonedas (Bitcoin, Ethereum...) o de ETFs. Las subidas NO son urgentes.
-    b) Reuniones, anuncios, discursos, órdenes ejecutivas o aranceles de Donald Trump.
+    b) Reuniones, anuncios, discursos, órdenes ejecutivas o aranceles del propio Donald Trump (lo que él dice o decide). Cotilleos, rumores sobre su salud o noticias sobre su entorno NO son urgentes (máximo 3).
     c) Salidas a bolsa (OPV/IPO, S-1) de empresas MUY grandes y conocidas por cualquiera (tipo Anthropic, OpenAI, SpaceX, Stripe, Shein, Revolut...). Si es una empresa que un joven español no conoce, NO es urgente.
   4 IMPORTANTE: todo lo demás que sea relevante: compras de empresas, rondas grandes, resultados de grandes empresas, subidas récord, Fed/BCE, lanzamientos e incidentes de IA, leyes en España, eventos grandes en Zaragoza, etc.
   3 INTERESANTE: buen tema de conversación para el podcast pero sin urgencia.
