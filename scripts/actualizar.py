@@ -255,7 +255,10 @@ def preguntar_ia(lote, nombres):
             "X-GitHub-Api-Version": "2022-11-28",
         })
         try:
-            bruto = urllib.request.urlopen(req, timeout=90).read().decode("utf-8", "replace")
+            resp = urllib.request.urlopen(req, timeout=90)
+            bruto = resp.read().decode("utf-8", "replace")
+            if resp.geturl() != url:
+                bruto = f"[redirigido a {resp.geturl()} · {resp.status}] " + bruto
         except Exception as err:
             detalle = err.read().decode("utf-8", "replace")[:200] if hasattr(err, "read") else ""
             errores.append(f"{url}: {err} {detalle}")
