@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radar del Podcast</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icono.svg">
+  <meta name="theme-color" content="#1F4E79">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="Las noticias que importan para el podcast, actualizadas solas y explicadas en dos niveles: técnico y para tontos.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor cabecera-fila">
+      <div>
+        <h1>📡 Radar del Podcast</h1>
+        <p class="sub">Lo importante de cada tema, actualizado solo y explicado para que cualquiera lo entienda.</p>
+      </div>
+      <button id="tema" class="boton-icono" aria-label="Cambiar tema claro u oscuro" title="Claro / oscuro">🌓</button>
+    </div>
+  </header>
+
+  <nav class="pestanas" aria-label="Secciones">
+    <div class="contenedor" id="pestanas"></div>
+  </nav>
+
+  <main class="contenedor">
+    <div class="barra">
+      <input id="buscar" type="search" placeholder="Buscar (p. ej. Anthropic, Trump, Zaragoza…)" aria-label="Buscar noticias">
+      <span id="contador" class="contador"></span>
+    </div>
+    <div id="intro" class="intro"></div>
+    <section id="lista" aria-live="polite"></section>
+    <p id="vacio" class="vacio" hidden>No hay nada aquí todavía. El robot se actualiza cada 10 minutos.</p>
+  </main>
+
+  <footer class="pie contenedor">
+    <p id="estado">Cargando…</p>
+    <details id="fallos" hidden>
+      <summary>Fuentes que no se han podido leer</summary>
+      <ul id="fallos-lista"></ul>
+    </details>
+    <p class="aviso">Esto no es asesoramiento financiero. Los resúmenes 🧠 los escribe Claude a partir de las fuentes enlazadas: compruébalas antes de citar una cifra.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

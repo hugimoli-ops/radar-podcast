@@ -1,0 +1,9 @@
+{
+  "name": "Radar del Podcast",
+  "short_name": "Radar",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1F4E79",
+  "icons": [{"src": "icono.svg", "sizes": "any", "type": "image/svg+xml"}]
+}

@@ -1,0 +1,534 @@
+{
+  "_ayuda": "Lista de fuentes que lee el robot. Para añadir una, copia un bloque {...} y cambia nombre, url y seccion. 'max' = cuántas noticias coge de esa fuente cada vez. 'alerta': true = todas sus noticias nuevas te llegan a Telegram.",
+  "secciones": [
+    {
+      "id": "inversiones",
+      "nombre": "Inversiones",
+      "icono": "📈"
+    },
+    {
+      "id": "emprendimiento",
+      "nombre": "Emprendimiento",
+      "icono": "🚀"
+    },
+    {
+      "id": "ia",
+      "nombre": "IA",
+      "icono": "🤖"
+    },
+    {
+      "id": "zaragoza",
+      "nombre": "Zaragoza y España",
+      "icono": "📍"
+    },
+    {
+      "id": "economia",
+      "nombre": "Economía y leyes",
+      "icono": "🏛️"
+    },
+    {
+      "id": "cine",
+      "nombre": "Cine",
+      "icono": "🎬"
+    },
+    {
+      "id": "moda",
+      "nombre": "Moda",
+      "icono": "👟"
+    },
+    {
+      "id": "musica",
+      "nombre": "Música",
+      "icono": "🎵"
+    },
+    {
+      "id": "deportes",
+      "nombre": "Deportes",
+      "icono": "⚽"
+    },
+    {
+      "id": "videojuegos",
+      "nombre": "Videojuegos y TCG",
+      "icono": "🎮"
+    },
+    {
+      "id": "ciencia",
+      "nombre": "Ciencia",
+      "icono": "🔭"
+    },
+    {
+      "id": "estudios",
+      "nombre": "Estudios",
+      "icono": "🎓"
+    },
+    {
+      "id": "otros",
+      "nombre": "Otros",
+      "icono": "🌍"
+    }
+  ],
+  "secciones_con_alertas": [
+    "inversiones",
+    "emprendimiento",
+    "ia"
+  ],
+  "palabras_alerta": [
+    "ipo",
+    "salida a bolsa",
+    "opv",
+    "s-1",
+    "files to go public",
+    "go public",
+    "trump",
+    "tariff",
+    "arancel",
+    "executive order",
+    "orden ejecutiva",
+    "sanction",
+    "sancion",
+    "acquire",
+    "acquisition",
+    "adquiere",
+    "adquisición",
+    "compra el",
+    "takeover",
+    "opa",
+    "stake",
+    "participación",
+    "activist",
+    "13d",
+    "plunge",
+    "soar",
+    "record high",
+    "record low",
+    "52-week",
+    "se desploma",
+    "se dispara",
+    "máximos históricos",
+    "mínimos",
+    "anthropic",
+    "openai",
+    "gpt-",
+    "claude",
+    "gemini",
+    "nvidia",
+    "meta ai",
+    "xai",
+    "grok",
+    "unicorn",
+    "unicornio",
+    "raises $",
+    "ronda de"
+  ],
+  "fuentes": [
+    {
+      "nombre": "CNBC",
+      "seccion": "inversiones",
+      "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+    },
+    {
+      "nombre": "MarketWatch",
+      "seccion": "inversiones",
+      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+    },
+    {
+      "nombre": "Yahoo Finance",
+      "seccion": "inversiones",
+      "url": "https://finance.yahoo.com/news/rssindex"
+    },
+    {
+      "nombre": "Reserva Federal",
+      "seccion": "inversiones",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "alerta": true
+    },
+    {
+      "nombre": "SEC (comunicados)",
+      "seccion": "inversiones",
+      "url": "https://www.sec.gov/news/pressreleases.rss"
+    },
+    {
+      "nombre": "Casa Blanca",
+      "seccion": "inversiones",
+      "url": "https://www.whitehouse.gov/feed/"
+    },
+    {
+      "nombre": "Trump en Truth Social (archivo no oficial)",
+      "seccion": "inversiones",
+      "url": "https://trumpstruth.org/feed",
+      "max": 10
+    },
+    {
+      "nombre": "CoinDesk",
+      "seccion": "inversiones",
+      "url": "https://www.coindesk.com/arc/outboundfeeds/rss/"
+    },
+    {
+      "nombre": "Expansión Mercados",
+      "seccion": "inversiones",
+      "url": "https://e00-expansion.uecdn.es/rss/mercados.xml"
+    },
+    {
+      "nombre": "Google News: Trump y mercados",
+      "seccion": "inversiones",
+      "url": "https://news.google.com/rss/search?q=Trump+(tariffs+OR+stocks+OR+%22executive+order%22+OR+CEOs)+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "Google News: salidas a bolsa (IPO)",
+      "seccion": "inversiones",
+      "url": "https://news.google.com/rss/search?q=(IPO+OR+%22files+to+go+public%22+OR+%22S-1%22)+when:1d&hl=en-US&gl=US&ceid=US:en",
+      "alerta": true
+    },
+    {
+      "nombre": "Google News: OPV y salida a bolsa",
+      "seccion": "inversiones",
+      "url": "https://news.google.com/rss/search?q=(%22salida+a+bolsa%22+OR+OPV)+when:2d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: movimientos extremos",
+      "seccion": "inversiones",
+      "url": "https://news.google.com/rss/search?q=(%22shares+plunge%22+OR+%22shares+soar%22+OR+%22record+high%22+OR+%22biggest+drop%22)+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "Google News: activistas y participaciones",
+      "seccion": "inversiones",
+      "url": "https://news.google.com/rss/search?q=(%22activist+investor%22+OR+%22takes+stake%22+OR+%2213D%22+OR+%22insider+buying%22)+when:2d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "TechCrunch",
+      "seccion": "emprendimiento",
+      "url": "https://techcrunch.com/feed/"
+    },
+    {
+      "nombre": "The Information (titulares)",
+      "seccion": "emprendimiento",
+      "url": "https://news.google.com/rss/search?q=site:theinformation.com+when:2d&hl=en-US&gl=US&ceid=US:en",
+      "alerta": true
+    },
+    {
+      "nombre": "Forbes Innovation",
+      "seccion": "emprendimiento",
+      "url": "https://www.forbes.com/innovation/feed/"
+    },
+    {
+      "nombre": "Fortune",
+      "seccion": "emprendimiento",
+      "url": "https://fortune.com/feed/"
+    },
+    {
+      "nombre": "Business Insider",
+      "seccion": "emprendimiento",
+      "url": "https://www.businessinsider.com/rss"
+    },
+    {
+      "nombre": "Sifted (Europa)",
+      "seccion": "emprendimiento",
+      "url": "https://sifted.eu/feed"
+    },
+    {
+      "nombre": "Crunchbase News",
+      "seccion": "emprendimiento",
+      "url": "https://news.crunchbase.com/feed/"
+    },
+    {
+      "nombre": "El Referente",
+      "seccion": "emprendimiento",
+      "url": "https://elreferente.es/feed/"
+    },
+    {
+      "nombre": "Hacker News (lo más votado)",
+      "seccion": "emprendimiento",
+      "url": "https://hnrss.org/frontpage?points=300"
+    },
+    {
+      "nombre": "Product Hunt",
+      "seccion": "emprendimiento",
+      "url": "https://www.producthunt.com/feed",
+      "max": 8
+    },
+    {
+      "nombre": "Google News: compras de empresas",
+      "seccion": "emprendimiento",
+      "url": "https://news.google.com/rss/search?q=(%22agrees+to+acquire%22+OR+%22to+be+acquired%22+OR+%22rejects+offer%22+OR+%22weird+product%22)+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "OpenAI",
+      "seccion": "ia",
+      "url": "https://openai.com/news/rss.xml",
+      "alerta": true
+    },
+    {
+      "nombre": "Google DeepMind",
+      "seccion": "ia",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "alerta": true
+    },
+    {
+      "nombre": "Google IA (blog)",
+      "seccion": "ia",
+      "url": "https://blog.google/technology/ai/rss/"
+    },
+    {
+      "nombre": "Hugging Face",
+      "seccion": "ia",
+      "url": "https://huggingface.co/blog/feed.xml"
+    },
+    {
+      "nombre": "Google News: Anthropic y Claude",
+      "seccion": "ia",
+      "url": "https://news.google.com/rss/search?q=Anthropic+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "The Verge IA",
+      "seccion": "ia",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    },
+    {
+      "nombre": "TechCrunch IA",
+      "seccion": "ia",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
+    },
+    {
+      "nombre": "The Decoder",
+      "seccion": "ia",
+      "url": "https://the-decoder.com/feed/"
+    },
+    {
+      "nombre": "MIT Technology Review",
+      "seccion": "ia",
+      "url": "https://www.technologyreview.com/feed/"
+    },
+    {
+      "nombre": "Xataka",
+      "seccion": "ia",
+      "url": "https://www.xataka.com/feedburner.xml"
+    },
+    {
+      "nombre": "Google News: IA en España",
+      "seccion": "ia",
+      "url": "https://news.google.com/rss/search?q=(%22inteligencia+artificial%22+OR+%22Meta+AI%22)+Espa%C3%B1a+when:1d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: incidentes de IA",
+      "seccion": "ia",
+      "url": "https://news.google.com/rss/search?q=(%22AI+agent%22+OR+%22AI+model%22)+(hack+OR+incident+OR+escaped+OR+rogue)+when:2d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "Heraldo (Zaragoza)",
+      "seccion": "zaragoza",
+      "url": "https://www.heraldo.es/rss/zaragoza/"
+    },
+    {
+      "nombre": "Google News: El Periódico de Aragón",
+      "seccion": "zaragoza",
+      "url": "https://news.google.com/rss/search?q=site:elperiodicodearagon.com+Zaragoza+when:1d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: planes en Zaragoza",
+      "seccion": "zaragoza",
+      "url": "https://news.google.com/rss/search?q=Zaragoza+(concierto+OR+charla+OR+conferencia+OR+festival+OR+%22firma+de+libros%22+OR+gastron%C3%B3mico)+when:3d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: famosos en Zaragoza",
+      "seccion": "zaragoza",
+      "url": "https://news.google.com/rss/search?q=Zaragoza+(influencer+OR+youtuber+OR+%22meet+and+greet%22+OR+%22podcast+en+directo%22+OR+ponencia)+when:7d&hl=es&gl=ES&ceid=ES:es",
+      "alerta": true
+    },
+    {
+      "nombre": "El País Economía",
+      "seccion": "economia",
+      "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada"
+    },
+    {
+      "nombre": "Europa Press Economía",
+      "seccion": "economia",
+      "url": "https://www.europapress.es/rss/rss.aspx?ch=00136"
+    },
+    {
+      "nombre": "Google News: vivienda y leyes",
+      "seccion": "economia",
+      "url": "https://news.google.com/rss/search?q=(vivienda+OR+alquiler+OR+%22Consejo+de+Ministros%22+OR+BOE)+when:1d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Variety",
+      "seccion": "cine",
+      "url": "https://variety.com/feed/",
+      "max": 10
+    },
+    {
+      "nombre": "Deadline",
+      "seccion": "cine",
+      "url": "https://deadline.com/feed/",
+      "max": 10
+    },
+    {
+      "nombre": "Espinof",
+      "seccion": "cine",
+      "url": "https://www.espinof.com/feedburner.xml"
+    },
+    {
+      "nombre": "Hypebeast",
+      "seccion": "moda",
+      "url": "https://hypebeast.com/feed"
+    },
+    {
+      "nombre": "Highsnobiety",
+      "seccion": "moda",
+      "url": "https://www.highsnobiety.com/feed/"
+    },
+    {
+      "nombre": "Google News: streetwear y pop-ups",
+      "seccion": "moda",
+      "url": "https://news.google.com/rss/search?q=(Supreme+OR+Palace+OR+Scuffers+OR+%22Louis+Vuitton%22+OR+%22pop-up%22)+moda+when:2d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Pitchfork",
+      "seccion": "musica",
+      "url": "https://pitchfork.com/feed/feed-news/rss"
+    },
+    {
+      "nombre": "Billboard",
+      "seccion": "musica",
+      "url": "https://www.billboard.com/feed/",
+      "max": 10
+    },
+    {
+      "nombre": "Google News: conciertos en Zaragoza",
+      "seccion": "musica",
+      "url": "https://news.google.com/rss/search?q=concierto+Zaragoza+when:7d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: giras en España",
+      "seccion": "musica",
+      "url": "https://news.google.com/rss/search?q=(gira+OR+concierto)+Espa%C3%B1a+anuncia+when:2d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Marca",
+      "seccion": "deportes",
+      "url": "https://e00-marca.uecdn.es/rss/portada.xml",
+      "max": 10
+    },
+    {
+      "nombre": "AS",
+      "seccion": "deportes",
+      "url": "https://feeds.as.com/mrss-s/pages/as/site/as.com/portada",
+      "max": 10
+    },
+    {
+      "nombre": "ESPN",
+      "seccion": "deportes",
+      "url": "https://www.espn.com/espn/rss/news",
+      "max": 10
+    },
+    {
+      "nombre": "Google News: Real Zaragoza",
+      "seccion": "deportes",
+      "url": "https://news.google.com/rss/search?q=%22Real+Zaragoza%22+when:2d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: fichajes",
+      "seccion": "deportes",
+      "url": "https://news.google.com/rss/search?q=fichaje+oficial+when:1d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "IGN",
+      "seccion": "videojuegos",
+      "url": "https://feeds.ign.com/ign/news"
+    },
+    {
+      "nombre": "VGC",
+      "seccion": "videojuegos",
+      "url": "https://www.videogameschronicle.com/feed/"
+    },
+    {
+      "nombre": "Eurogamer",
+      "seccion": "videojuegos",
+      "url": "https://www.eurogamer.net/feed"
+    },
+    {
+      "nombre": "PlayStation Blog",
+      "seccion": "videojuegos",
+      "url": "https://blog.playstation.com/feed/"
+    },
+    {
+      "nombre": "Google News: cartas (TCG)",
+      "seccion": "videojuegos",
+      "url": "https://news.google.com/rss/search?q=(%22Pokemon+TCG%22+OR+%22Magic:+The+Gathering%22+OR+Lorcana+OR+%22One+Piece+Card%22+OR+%22Yu-Gi-Oh%22)+when:3d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "NASA",
+      "seccion": "ciencia",
+      "url": "https://www.nasa.gov/news-release/feed/"
+    },
+    {
+      "nombre": "ESA",
+      "seccion": "ciencia",
+      "url": "https://www.esa.int/rssfeed/Our_Activities/Space_Science"
+    },
+    {
+      "nombre": "Quanta Magazine",
+      "seccion": "ciencia",
+      "url": "https://www.quantamagazine.org/feed/"
+    },
+    {
+      "nombre": "Space.com",
+      "seccion": "ciencia",
+      "url": "https://www.space.com/feeds/all",
+      "max": 10
+    },
+    {
+      "nombre": "ScienceDaily",
+      "seccion": "ciencia",
+      "url": "https://www.sciencedaily.com/rss/top/science.xml",
+      "max": 10
+    },
+    {
+      "nombre": "Google News: grados nuevos",
+      "seccion": "estudios",
+      "url": "https://news.google.com/rss/search?q=(%22nuevo+grado%22+OR+%22doble+grado%22+OR+%22nueva+titulaci%C3%B3n%22)+universidad+when:7d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: Unizar",
+      "seccion": "estudios",
+      "url": "https://news.google.com/rss/search?q=(Unizar+OR+%22Universidad+de+Zaragoza%22+OR+%22Universidad+San+Jorge%22)+when:3d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "Google News: becas y PAU",
+      "seccion": "estudios",
+      "url": "https://news.google.com/rss/search?q=(becas+OR+PAU+OR+selectividad)+universidad+when:3d&hl=es&gl=ES&ceid=ES:es"
+    },
+    {
+      "nombre": "BBC World",
+      "seccion": "otros",
+      "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "max": 10
+    },
+    {
+      "nombre": "Google News: portada España",
+      "seccion": "otros",
+      "url": "https://news.google.com/rss?hl=es&gl=ES&ceid=ES:es",
+      "max": 10
+    },
+    {
+      "nombre": "Trump en Truth Social (archivo trumpstruth.org)",
+      "seccion": "inversiones",
+      "url": "https://trumpstruth.org/feed",
+      "max": 8
+    },
+    {
+      "nombre": "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)",
+      "seccion": "ia",
+      "url": "https://news.google.com/rss/search?q=(Musk+OR+Altman+OR+Amodei+OR+%22Jensen+Huang%22)+(tweeted+OR+%22posted+on+X%22+OR+%22wrote+on+X%22)+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "Google News: Trump publica en Truth Social",
+      "seccion": "inversiones",
+      "url": "https://news.google.com/rss/search?q=Trump+%22Truth+Social%22+post+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "nombre": "Forbes (startups y millonarios)",
+      "seccion": "emprendimiento",
+      "url": "https://news.google.com/rss/search?q=site:forbes.com+(startup+OR+billionaire+OR+acquisition)+when:2d&hl=en-US&gl=US&ceid=US:en"
+    }
+  ]
+}
