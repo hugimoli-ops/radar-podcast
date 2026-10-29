@@ -174,7 +174,7 @@ def leer_fuente(fuente):
 TG = {"enviados": 0, "errores": 0, "ultimo_error": ""}
 
 
-def telegram(texto, vista_previa=False):
+def telegram(texto, vista_previa=False, silencioso=False):
     if not TOKEN or not CHAT:
         return False
     datos = urllib.parse.urlencode({
@@ -182,6 +182,7 @@ def telegram(texto, vista_previa=False):
         "text": texto[:4000],
         "parse_mode": "HTML",
         "disable_web_page_preview": "false" if vista_previa else "true",
+        "disable_notification": "true" if silencioso else "false",
     }).encode()
     try:
         urllib.request.urlopen(f"https://api.telegram.org/bot{TOKEN}/sendMessage", data=datos, timeout=20).read()
@@ -204,12 +205,51 @@ def enlace_web(ancla=""):
     return WEB.rstrip("/") + "/" + (f"#{ancla}" if ancla else "")
 
 
-def mensaje_noticia(n, iconos):
+def hora_de(n):
+    f = fecha_de(n.get("fecha", ""))
+    if not f:
+        return ""
+    try:
+        from zoneinfo import ZoneInfo
+        local = f.astimezone(ZoneInfo(ZONA))
+    except Exception:
+        local = f + dt.timedelta(hours=1)
+    minutos = int((ahora() - f).total_seconds() // 60)
+    if minutos < 60:
+        hace = f"hace {max(minutos, 1)} min"
+    elif minutos < 24 * 60:
+        hace = f"hace {minutos // 60} h"
+    else:
+        hace = f"hace {minutos // 1440} d"
+    return f"{local:%H:%M} ({hace})"
+
+
+def titular_limpio(n):
+    # Google News añade " - Medio" al final del titular
+    t = n["titulo"]
+    medio = n.get("medio") or ""
+    if medio and t.endswith(" - " + medio):
+        t = t[: -len(medio) - 3]
+    return re.sub(r"\s+-\s+[^-]{2,40}$", "", t) if "news.google" in n.get("enlace", "") else t
+
+
+def mensaje_noticia(n, iconos, nombres):
     ic = iconos.get(n["seccion"], "📰")
-    partes = [f"{ic} <b>{e(n['titulo'])}</b>", f"<i>{e(n['medio'])}</i>", f'<a href="{e(n["enlace"])}">Leer la noticia</a>']
+    nivel = "🔴 <b>URGENTE</b>" if n.get("prioridad") == 2 else "🟠 <b>IMPORTANTE</b>"
+    lineas = [
+        f"{nivel} · {ic} {e(nombres.get(n['seccion'], n['seccion']).upper())}",
+        "",
+        f"<b>{e(titular_limpio(n))}</b>",
+        "",
+        f"📰 {e(n.get('medio') or n.get('fuente', ''))}" + (f" · 🕒 {hora_de(n)}" if hora_de(n) else ""),
+    ]
+    if n.get("motivos"):
+        lineas.append(f"🏷️ Salta por: {e(', '.join(n['motivos'][:4]))}")
+    enlaces = f'🔗 <a href="{e(n["enlace"])}">Leer la noticia</a>'
     if WEB:
-        partes[-1] += f' · <a href="{e(enlace_web("n-" + n["id"]))}">Ver en la web</a>'
-    return "\n".join(partes)
+        enlaces += f' · <a href="{e(enlace_web("n-" + n["id"]))}">Ver en la web</a>'
+    lineas += ["", enlaces]
+    return "\n".join(lineas)
 
 
 def mensaje_resumen(r, iconos):
@@ -228,25 +268,41 @@ def mensaje_resumen(r, iconos):
 
 
 def mensaje_agrupado(lista, titulo, iconos):
-    lineas = [f"<b>{e(titulo)}</b>"]
-    for n in lista[:12]:
-        ic = iconos.get(n.get("seccion", ""), "📰")
-        lineas.append(f'{ic} <a href="{e(n.get("enlace", ""))}">{e(n.get("titulo", ""))}</a>')
-    if len(lista) > 12:
-        lineas.append(f"…y {len(lista) - 12} más.")
+    lineas = [f"<b>{e(titulo)}</b>", ""]
+    por_seccion = {}
+    for n in lista[:15]:
+        por_seccion.setdefault(n.get("seccion", ""), []).append(n)
+    for sec, items in por_seccion.items():
+        ic = iconos.get(sec, "📰")
+        for n in items:
+            marca = "🔴 " if n.get("prioridad") == 2 else ""
+            lineas.append(f'{ic} {marca}<a href="{e(n.get("enlace", ""))}">{e(titular_limpio(n) if "titulo" in n else "")}</a>')
+    if len(lista) > 15:
+        lineas.append(f"\n…y {len(lista) - 15} más en la web.")
     if WEB:
-        lineas.append(f'\n<a href="{e(enlace_web())}">Abrir la web</a>')
+        lineas.append(f'\n🌐 <a href="{e(enlace_web())}">Abrir la web</a>')
     return "\n".join(lineas)
 
 
 # ----------------------------------------------------------------- principal
-def es_importante(n, cfg, fuentes_alerta, patrones):
-    if n["fuente"] in fuentes_alerta:
-        return True
-    if n["seccion"] not in cfg.get("secciones_con_alertas", []):
-        return False
+def prioridad(n, cfg, fuentes_alerta, patrones, urgentes):
+    """0 = normal, 1 = importante, 2 = urgente. Guarda en n["motivos"] por qué salta."""
     t = n["titulo"].lower()
-    return any(p.search(t) for p in patrones)
+    motivos = [pal for pal, p in patrones if p.search(t)]
+    motivos_urg = [pal for pal, p in urgentes if p.search(t)]
+    todos = list(dict.fromkeys(motivos_urg + motivos))
+    # Quita repeticiones del tipo "acquire" dentro de "agrees to acquire"
+    n["motivos"] = [m for m in todos if not any(m != o and m in o for o in todos)]
+    en_seccion = n["seccion"] in cfg.get("secciones_con_alertas", [])
+    de_fuente = n["fuente"] in fuentes_alerta
+    if de_fuente:
+        n["motivos"].insert(0, "fuente vigilada")
+    if not (de_fuente or (en_seccion and motivos) or (en_seccion and motivos_urg)):
+        return 0
+    # Urgente: una palabra urgente + otra señal (fuente vigilada u otra palabra distinta)
+    if motivos_urg and (de_fuente or len(n["motivos"]) >= 2):
+        return 2
+    return 1
 
 
 def compilar(palabras):
@@ -254,9 +310,9 @@ def compilar(palabras):
     for p in palabras:
         p = p.lower()
         if re.fullmatch(r"[\wáéíóúñü ]+", p):
-            patrones.append(re.compile(r"\b" + re.escape(p) + r"\b"))
+            patrones.append((p, re.compile(r"\b" + re.escape(p) + r"\b")))
         else:
-            patrones.append(re.compile(re.escape(p)))
+            patrones.append((p, re.compile(re.escape(p))))
     return patrones
 
 
@@ -266,6 +322,8 @@ def main():
     iconos = {s["id"]: s.get("icono", "") for s in cfg.get("secciones", [])}
     fuentes_alerta = {f["nombre"] for f in fuentes if f.get("alerta")}
     patrones = compilar(cfg.get("palabras_alerta", []))
+    urgentes = compilar(cfg.get("palabras_urgentes", []))
+    nombres = {x["id"]: x.get("nombre", x["id"]) for x in cfg.get("secciones", [])}
 
     noticias = leer_json(NOTICIAS, [])
     resumenes = leer_json(RESUMENES, [])
@@ -304,9 +362,12 @@ def main():
         clave = clave_titulo(n["titulo"])
         repetida = clave in claves_vistas
         claves_vistas.add(clave)
-        n["importante"] = (not repetida) and es_importante(n, cfg, fuentes_alerta, patrones)
+        n["prioridad"] = 0 if repetida else prioridad(n, cfg, fuentes_alerta, patrones, urgentes)
+        n["importante"] = n["prioridad"] > 0
         if n["importante"] and not primera_vez:
             avisos.append(n)
+    # Primero lo urgente, luego lo más reciente
+    avisos.sort(key=lambda n: (n["prioridad"], n["fecha"]), reverse=True)
     marcadas = {n["id"] for n in nuevas if n.get("importante")}
     for n in lista:
         if n["id"] in marcadas:
@@ -322,16 +383,19 @@ def main():
         telegram("✅ <b>Robot de noticias conectado.</b>\nA partir de ahora te aviso aquí de lo importante." + (f'\n<a href="{e(enlace_web())}">Abrir la web</a>' if WEB else ""))
         avisados.update(r["id"] for r in resumenes if r.get("id"))
     elif silencio:
-        pendientes.extend({k: n[k] for k in ("titulo", "enlace", "seccion")} for n in avisos)
+        pendientes.extend({k: n.get(k) for k in ("titulo", "enlace", "seccion", "prioridad", "medio")} for n in avisos)
         pendientes = pendientes[-40:]
     else:
         if pendientes:
             telegram(mensaje_agrupado(pendientes, f"🌅 Mientras dormías ({len(pendientes)})", iconos))
             pendientes = []
-        for n in avisos[:MAX_AVISOS_POR_RONDA]:
-            telegram(mensaje_noticia(n, iconos), vista_previa=True)
+        # Urgentes: un mensaje cada una, con sonido. Importantes: un mensaje cada una, sin sonido.
+        # Lo que pase del máximo va en un único mensaje agrupado, sin sonido.
+        sueltas = avisos[:MAX_AVISOS_POR_RONDA]
+        for n in sueltas:
+            telegram(mensaje_noticia(n, iconos, nombres), vista_previa=True, silencioso=n["prioridad"] < 2)
         if len(avisos) > MAX_AVISOS_POR_RONDA:
-            telegram(mensaje_agrupado(avisos[MAX_AVISOS_POR_RONDA:], "📌 Más noticias importantes", iconos))
+            telegram(mensaje_agrupado(avisos[MAX_AVISOS_POR_RONDA:], "📌 Más noticias importantes", iconos), silencioso=True)
         for r in resumenes_nuevos[:5]:
             if telegram(mensaje_resumen(r, iconos)) or not TOKEN:
                 avisados.add(r["id"])

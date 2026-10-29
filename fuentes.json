@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Lista de fuentes que lee el robot. Para añadir una, copia un bloque {...} y cambia nombre, url y seccion. 'max' = cuántas noticias coge de esa fuente cada vez. 'alerta': true = todas sus noticias nuevas te llegan a Telegram.",
+  "_ayuda": "Lista de fuentes que lee el robot. Para añadir una, copia un bloque {...} y cambia nombre, url y seccion. 'max' = cuántas noticias coge de esa fuente cada vez. 'alerta': true = todas sus noticias nuevas te llegan a Telegram. 'palabras_alerta': si el titular las tiene, es IMPORTANTE (aviso sin sonido). 'palabras_urgentes': cuentan doble y lo vuelven URGENTE (aviso con sonido).",
   "secciones": [
     {
       "id": "inversiones",
@@ -119,6 +119,31 @@
     "unicornio",
     "raises $",
     "ronda de"
+  ],
+  "palabras_urgentes": [
+    "s-1",
+    "files to go public",
+    "files for ipo",
+    "salida a bolsa",
+    "opv",
+    "executive order",
+    "orden ejecutiva",
+    "new tariffs",
+    "nuevos aranceles",
+    "agrees to acquire",
+    "agreed to acquire",
+    "adquiere",
+    "lanza una opa",
+    "plunge",
+    "se desploma",
+    "record high",
+    "máximos históricos",
+    "crash",
+    "hacked",
+    "escaped",
+    "rogue ai",
+    "launches gpt",
+    "unveils"
   ],
   "fuentes": [
     {
