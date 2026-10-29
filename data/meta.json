@@ -1,7 +1,7 @@
 {
-  "actualizado": "2026-10-29T15:35:43+00:00",
-  "noticias": 1425,
-  "nuevas_en_esta_ronda": 6,
+  "actualizado": "2026-10-29T15:36:44+00:00",
+  "noticias": 1432,
+  "nuevas_en_esta_ronda": 7,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
@@ -12,7 +12,7 @@
     "error_traductor": ""
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": ""
   }
