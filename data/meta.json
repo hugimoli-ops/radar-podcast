@@ -1,18 +1,18 @@
 {
-  "actualizado": "2026-10-29T15:33:16+00:00",
-  "noticias": 1419,
-  "nuevas_en_esta_ronda": 9,
+  "actualizado": "2026-10-29T15:34:16+00:00",
+  "noticias": 1420,
+  "nuevas_en_esta_ronda": 1,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
     "peticiones": 1,
     "errores": 1,
-    "ultimo_error": "ValueError: respuesta rara de la IA: OK\r\n ",
-    "traducidas": 0,
-    "error_traductor": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ultimo_error": "ValueError: https://models.github.ai/inference/chat/completions: respuesta rara: OK\r\n | https://models.inference.ai.azure.com/chat/completions: <urlopen error [Errno -2] Name or service not known>  ",
+    "traducidas": 1,
+    "error_traductor": ""
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": ""
   }
