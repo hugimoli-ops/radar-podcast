@@ -1,11 +1,11 @@
 {
-  "actualizado": "2026-10-30T09:38:57+00:00",
+  "actualizado": "2026-10-30T09:42:49+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
+  "nuevas_en_esta_ronda": 13,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -13,8 +13,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 12,
     "errores": 0,
-    "ultimo_error": "HTTPError: HTTP Error 400: Bad Request"
+    "ultimo_error": "HTTPError: HTTP Error 400: Bad Request",
+    "fotos": 2,
+    "fotos_fallidas": 1
   }
 }
