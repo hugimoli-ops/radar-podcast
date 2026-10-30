@@ -450,9 +450,9 @@ def mensaje_noticia(n, avisar=True, con_cabecera=True):
 
 
 def enviar_noticia(n, avisar, silencioso):
-    """Las urgentes e importantes van con una franja de color arriba (imagen); el resto, en texto."""
+    """Todas las noticias van con una franja de color arriba (imagen) según su nivel y tema."""
     nivel = n.get("nivel", 2)
-    if nivel >= 4 and WEB:
+    if WEB:
         texto = mensaje_noticia(n, avisar, con_cabecera=False)
         # Telegram limita el pie de foto a 1024 caracteres contados en UTF-16 (los emojis cuentan doble)
         if len(texto_plano(texto).encode("utf-16-le")) // 2 <= 1000:
