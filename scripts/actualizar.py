@@ -42,7 +42,7 @@ NIVEL_MENCION = 5            # solo las URGENTES te mencionan y suenan
 # IA gratuita de Google (Gemini). La clave se saca gratis en https://aistudio.google.com/apikey
 # y se guarda en GitHub como secreto GEMINI_API_KEY. Se prueban los modelos en orden.
 IA_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
-IA_MODELOS = ["gemini-flash-lite-latest", "gemini-flash-latest", "gemini-2.5-flash-lite", "gemini-2.5-flash"]
+IA_MODELOS = ["gemini-3.5-flash-lite", "gemini-flash-lite-latest", "gemini-3.5-flash", "gemini-flash-latest"]
 IA_POR_PETICION = 10         # noticias que se mandan juntas a la IA
 IA_PETICIONES_POR_RONDA = 4
 IA_PETICIONES_POR_DIA = 400  # muy por debajo del límite gratis de Gemini
@@ -256,7 +256,7 @@ def preguntar_ia(lote, nombres):
             "Content-Type": "application/json",
         })
         try:
-            resp = urllib.request.urlopen(req, timeout=90)
+            resp = urllib.request.urlopen(req, timeout=120)
             bruto = resp.read().decode("utf-8", "replace")
             if resp.geturl() != url:
                 bruto = f"[redirigido a {resp.geturl()} · {resp.status}] " + bruto
@@ -266,8 +266,9 @@ def preguntar_ia(lote, nombres):
             continue
         try:
             contenido = json.loads(bruto)["choices"][0]["message"]["content"] or ""
-            contenido = re.sub(r"^```(?:json)?\s*|\s*```$", "", contenido.strip())
-            return {x.get("id"): x for x in json.loads(contenido).get("noticias", [])}
+            # Se queda con lo que hay entre la primera { y la última }
+            contenido = contenido[contenido.find("{"):contenido.rfind("}") + 1]
+            return {x.get("id"): x for x in json.loads(contenido, strict=False).get("noticias", [])}
         except Exception:
             errores.append(f"{modelo}: respuesta rara: {bruto[:150]}")
     raise ValueError(" | ".join(errores))

@@ -13,6 +13,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write    # para que el robot se vuelva a lanzar solo
 
 concurrency:
   group: actualizar
@@ -60,3 +61,19 @@ jobs:
       - name: Publicar la web
         id: despliegue
         uses: actions/deploy-pages@v4
+
+      # GitHub casi nunca respeta el "cron" de arriba, así que el robot se encadena solo:
+      # espera unos minutos y lanza la siguiente vuelta (si no hay ya otra esperando).
+      - name: Programar la siguiente vuelta
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 180
+          esperando=$(gh api "repos/${{ github.repository }}/actions/workflows/actualizar.yml/runs?per_page=20" \
+            --jq '[.workflow_runs[] | select(.id != ${{ github.run_id }}) | select(.status=="queued" or .status=="pending" or .status=="waiting" or .status=="requested" or .status=="in_progress")] | length')
+          echo "Vueltas en cola: $esperando"
+          if [ "$esperando" = "0" ]; then
+            gh api -X POST "repos/${{ github.repository }}/actions/workflows/actualizar.yml/dispatches" -f ref=main
+            echo "Siguiente vuelta lanzada"
+          fi
