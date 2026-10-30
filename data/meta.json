@@ -1,23 +1,23 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-30T20:07:00+00:00",
+  "actualizado": "2026-10-30T20:17:55+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
+  "nuevas_en_esta_ronda": 12,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
-    "traducidas": 0,
+    "traducidas": 1,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 12,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 12,
     "fotos_fallidas": 0
   }
 }
