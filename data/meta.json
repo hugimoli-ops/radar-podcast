@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-30T16:07:35+00:00",
+  "actualizado": "2026-10-30T16:11:11+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "PlayStation Blog": "HTTPError: HTTP Error 502: Bad Gateway"
+  },
   "ia": {
     "peticiones": 1,
     "errores": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 8,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
