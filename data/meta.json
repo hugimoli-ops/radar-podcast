@@ -1,11 +1,11 @@
 {
-  "actualizado": "2026-10-30T09:31:35+00:00",
+  "actualizado": "2026-10-30T09:35:20+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
+  "nuevas_en_esta_ronda": 9,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -13,7 +13,7 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 11,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": ""
   }
