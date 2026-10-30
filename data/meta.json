@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-30T15:27:18+00:00",
+  "actualizado": "2026-10-30T15:31:21+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 7,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>"
+  },
   "ia": {
     "peticiones": 1,
     "errores": 0,
