@@ -177,6 +177,7 @@
   }
 
   function pintarEstado(meta) {
+    if (meta && meta.bot) { $('bot').href = `https://t.me/${encodeURIComponent(meta.bot)}`; $('bot').hidden = false; }
     if (!meta || !meta.actualizado) { $('estado').textContent = 'Aún no se ha ejecutado el robot.'; return; }
     const d = new Date(meta.actualizado);
     $('estado').textContent = `Actualizado ${hace(meta.actualizado)} (${d.toLocaleString('es-ES')}) · ${meta.noticias} noticias · ${meta.fuentes_ok} fuentes leídas`;

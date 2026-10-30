@@ -667,7 +667,14 @@ def main():
         "fotos_ids": FOTOS_IDS,
     })
     escribir_json(ESTADO, estado, compacto=True)
+    if TOKEN and not estado.get("bot"):
+        try:
+            estado["bot"] = json.loads(urllib.request.urlopen(f"https://api.telegram.org/bot{TOKEN}/getMe", timeout=15).read())["result"]["username"]
+            escribir_json(ESTADO, estado, compacto=True)
+        except Exception:
+            pass
     escribir_json(META, {
+        "bot": estado.get("bot", ""),
         "actualizado": ahora().isoformat(timespec="seconds"),
         "noticias": len(lista),
         "nuevas_en_esta_ronda": len(nuevas),
