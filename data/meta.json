@@ -1,19 +1,19 @@
 {
-  "actualizado": "2026-10-30T08:47:24+00:00",
-  "noticias": 2430,
-  "nuevas_en_esta_ronda": 254,
+  "actualizado": "2026-10-30T08:51:51+00:00",
+  "noticias": 2453,
+  "nuevas_en_esta_ronda": 25,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 4,
+    "peticiones": 3,
     "errores": 0,
     "ultimo_error": "",
-    "traducidas": 80,
+    "traducidas": 0,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 42,
+    "enviados": 23,
     "errores": 0,
     "ultimo_error": ""
   }
