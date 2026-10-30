@@ -378,7 +378,8 @@ def telegram(texto, vista_previa=False, silencioso=False, foto=None):
     except Exception as err:
         print("Error enviando a Telegram:", err)
         TG["errores"] += 1
-        TG["ultimo_error"] = f"{type(err).__name__}: {err}"[:200]
+        detalle = err.read().decode("utf-8", "replace")[:200] if hasattr(err, "read") else ""
+        TG["ultimo_error"] = f"{metodo} {type(err).__name__}: {err} {detalle} · {campos.get('photo', '')}"[:400]
         return False
 
 
