@@ -353,7 +353,7 @@ def enriquecer(noticias, nombres, estado):
 
 
 # ----------------------------------------------------------------- Telegram
-TG = {"enviados": 0, "errores": 0, "ultimo_error": ""}
+TG = {"enviados": 0, "errores": 0, "ultimo_error": "", "fotos": 0, "fotos_fallidas": 0}
 
 
 def telegram(texto, vista_previa=False, silencioso=False, foto=None):
@@ -457,8 +457,10 @@ def enviar_noticia(n, avisar, silencioso):
         if len(texto_plano(texto)) <= 1000:
             foto = enlace_web().split("#")[0] + f"img/n{nivel}-{n.get('tema', 'otros')}.png"
             if telegram(texto, silencioso=silencioso, foto=foto):
+                TG["fotos"] += 1
                 return True
             TG["errores"] -= 1  # no cuenta como error: se reintenta en texto
+            TG["fotos_fallidas"] += 1
     return telegram(mensaje_noticia(n, avisar), vista_previa=nivel >= 4, silencioso=silencioso)
 
 
@@ -648,7 +650,7 @@ def main():
         "fuentes_fallidas": fallidas,
         "ia": dict(IA, clave="sí" if IA_CLAVE else "falta GEMINI_API_KEY"),
         "telegram": ("sin configurar" if not (TOKEN and CHAT) else
-                     {"enviados": TG["enviados"], "errores": TG["errores"], "ultimo_error": TG["ultimo_error"]}),
+                     dict(TG)),
     })
     print(f"Fuentes OK: {ok}/{len(fuentes)} · nuevas: {len(nuevas)} · avisos: {len(avisos)} · resúmenes nuevos: {len(resumenes_nuevos)}")
     for nombre, err in fallidas.items():
