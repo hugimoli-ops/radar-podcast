@@ -353,6 +353,7 @@ def enriquecer(noticias, nombres, estado):
 
 
 # ----------------------------------------------------------------- Telegram
+FOTOS_IDS = {}  # nombre de la imagen -> código de Telegram (se guarda en estado.json)
 TG = {"enviados": 0, "errores": 0, "ultimo_error": "", "fotos": 0, "fotos_fallidas": 0}
 
 
@@ -364,22 +365,42 @@ def telegram(texto, vista_previa=False, silencioso=False, foto=None):
         "parse_mode": "HTML",
         "disable_notification": "true" if silencioso else "false",
     }
+    archivo = None
     if foto:
         metodo = "sendPhoto"
-        campos.update({"photo": foto, "caption": texto})
+        campos["caption"] = texto
+        # Si Telegram ya tiene la imagen guardada se usa su código; si no, se sube el archivo
+        if foto in FOTOS_IDS:
+            campos["photo"] = FOTOS_IDS[foto]
+        else:
+            archivo = RAIZ / "img" / foto
     else:
         metodo = "sendMessage"
         campos.update({"text": texto[:4000], "disable_web_page_preview": "false" if vista_previa else "true"})
-    datos = urllib.parse.urlencode(campos).encode()
+    if archivo:
+        frontera = "----radar" + hashlib.md5(os.urandom(8)).hexdigest()
+        partes = []
+        for k, v in campos.items():
+            partes.append(f'--{frontera}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n'.encode())
+        partes.append(f'--{frontera}\r\nContent-Disposition: form-data; name="photo"; filename="{foto}"\r\nContent-Type: image/png\r\n\r\n'.encode())
+        partes.append(archivo.read_bytes() + f"\r\n--{frontera}--\r\n".encode())
+        datos = b"".join(partes)
+        cabeceras = {"Content-Type": f"multipart/form-data; boundary={frontera}"}
+    else:
+        datos = urllib.parse.urlencode(campos).encode()
+        cabeceras = {}
     try:
-        urllib.request.urlopen(f"https://api.telegram.org/bot{TOKEN}/{metodo}", data=datos, timeout=20).read()
+        req = urllib.request.Request(f"https://api.telegram.org/bot{TOKEN}/{metodo}", data=datos, headers=cabeceras)
+        respuesta = json.loads(urllib.request.urlopen(req, timeout=30).read())
+        if archivo:
+            FOTOS_IDS[foto] = respuesta["result"]["photo"][-1]["file_id"]
         TG["enviados"] += 1
         return True
     except Exception as err:
         print("Error enviando a Telegram:", err)
         TG["errores"] += 1
         detalle = err.read().decode("utf-8", "replace")[:200] if hasattr(err, "read") else ""
-        TG["ultimo_error"] = f"{metodo} {type(err).__name__}: {err} {detalle} · {campos.get('photo', '')}"[:400]
+        TG["ultimo_error"] = f"{metodo} {type(err).__name__}: {err} {detalle} · {foto or ''}"[:400]
         return False
 
 
@@ -453,11 +474,11 @@ def mensaje_noticia(n, avisar=True, con_cabecera=True):
 def enviar_noticia(n, avisar, silencioso):
     """Todas las noticias van con una franja de color arriba (imagen) según su nivel y tema."""
     nivel = n.get("nivel", 2)
-    if WEB:
+    if (RAIZ / "img" / f"n{nivel}-{n.get('tema', 'otros')}.png").exists():
         texto = mensaje_noticia(n, avisar, con_cabecera=False)
         # Telegram limita el pie de foto a 1024 caracteres contados en UTF-16 (los emojis cuentan doble)
         if len(texto_plano(texto).encode("utf-16-le")) // 2 <= 1000:
-            foto = enlace_web().split("#")[0] + f"img/n{nivel}-{n.get('tema', 'otros')}.png"
+            foto = f"n{nivel}-{n.get('tema', 'otros')}.png"
             if telegram(texto, silencioso=silencioso, foto=foto):
                 TG["fotos"] += 1
                 return True
@@ -554,6 +575,7 @@ def main():
     vistos = set(estado.get("vistos", []))
     claves_vistas = set(estado.get("claves", []))
     pendientes = estado.get("pendientes", [])
+    FOTOS_IDS.update(estado.get("fotos_ids", {}))
 
     # 1. Leer todas las fuentes a la vez
     nuevas, fallidas, ok = [], {}, 0
@@ -642,6 +664,7 @@ def main():
         "claves": list(claves_vistas)[-8000:],
         "resumenes_avisados": list(avisados)[-3000:],
         "pendientes": pendientes,
+        "fotos_ids": FOTOS_IDS,
     })
     escribir_json(ESTADO, estado, compacto=True)
     escribir_json(META, {
