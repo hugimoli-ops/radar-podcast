@@ -1,11 +1,11 @@
 {
-  "actualizado": "2026-10-30T10:02:49+00:00",
+  "actualizado": "2026-10-30T10:10:24+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 8,
+  "nuevas_en_esta_ronda": 17,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -13,10 +13,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 16,
     "errores": 0,
-    "ultimo_error": "HTTPError: HTTP Error 400: Bad Request",
-    "fotos": 6,
-    "fotos_fallidas": 1
+    "ultimo_error": "sendPhoto HTTPError: HTTP Error 400: Bad Request {\"ok\":false,\"error_code\":400,\"description\":\"Bad Request: failed to get HTTP URL content\"} · https://hugimoli-ops.github.io/radar-podcast/img/n4-inversiones.png",
+    "fotos": 13,
+    "fotos_fallidas": 3
   }
 }
