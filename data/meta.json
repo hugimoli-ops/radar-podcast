@@ -1,12 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-30T22:21:53+00:00",
+  "actualizado": "2026-10-30T22:25:28+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 77,
-  "fuentes_fallidas": {
-    "SEC (comunicados)": "URLError: <urlopen error _ssl.c:1063: The handshake operation timed out>"
-  },
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 78,
+  "fuentes_fallidas": {},
   "ia": {
     "peticiones": 1,
     "errores": 0,
@@ -16,10 +14,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
