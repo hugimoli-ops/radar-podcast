@@ -454,7 +454,8 @@ def enviar_noticia(n, avisar, silencioso):
     nivel = n.get("nivel", 2)
     if nivel >= 4 and WEB:
         texto = mensaje_noticia(n, avisar, con_cabecera=False)
-        if len(texto_plano(texto)) <= 1000:
+        # Telegram limita el pie de foto a 1024 caracteres contados en UTF-16 (los emojis cuentan doble)
+        if len(texto_plano(texto).encode("utf-16-le")) // 2 <= 1000:
             foto = enlace_web().split("#")[0] + f"img/n{nivel}-{n.get('tema', 'otros')}.png"
             if telegram(texto, silencioso=silencioso, foto=foto):
                 TG["fotos"] += 1
