@@ -356,18 +356,23 @@ def enriquecer(noticias, nombres, estado):
 TG = {"enviados": 0, "errores": 0, "ultimo_error": ""}
 
 
-def telegram(texto, vista_previa=False, silencioso=False):
+def telegram(texto, vista_previa=False, silencioso=False, foto=None):
     if not TOKEN or not CHAT:
         return False
-    datos = urllib.parse.urlencode({
+    campos = {
         "chat_id": CHAT,
-        "text": texto[:4000],
         "parse_mode": "HTML",
-        "disable_web_page_preview": "false" if vista_previa else "true",
         "disable_notification": "true" if silencioso else "false",
-    }).encode()
+    }
+    if foto:
+        metodo = "sendPhoto"
+        campos.update({"photo": foto, "caption": texto})
+    else:
+        metodo = "sendMessage"
+        campos.update({"text": texto[:4000], "disable_web_page_preview": "false" if vista_previa else "true"})
+    datos = urllib.parse.urlencode(campos).encode()
     try:
-        urllib.request.urlopen(f"https://api.telegram.org/bot{TOKEN}/sendMessage", data=datos, timeout=20).read()
+        urllib.request.urlopen(f"https://api.telegram.org/bot{TOKEN}/{metodo}", data=datos, timeout=20).read()
         TG["enviados"] += 1
         return True
     except Exception as err:
@@ -415,12 +420,23 @@ def titular_limpio(n):
     return re.sub(r"\s+-\s+[^-]{2,40}$", "", t) if "news.google" in n.get("enlace", "") else t
 
 
-def mensaje_noticia(n, avisar=True):
-    barra, etiqueta = NIVELES.get(n.get("nivel", 2), NIVELES[2])
-    cabecera = f"{barra} <b>{etiqueta}</b>"
-    if avisar and n.get("nivel", 0) >= NIVEL_MENCION and MENCION:
-        cabecera += f" · {MENCION}"
-    lineas = [cabecera, f"<b>{e(TEMAS.get(n.get('tema'), '🌍 OTROS'))}</b>", "", f"<b>{e(n.get('titulo_es') or titular_limpio(n))}</b>"]
+ETIQUETAS = {5: "#urgente", 4: "#importante", 3: "#interesante", 2: "#normal", 1: "#pocorelevante"}
+
+
+def texto_plano(html_texto):
+    return html.unescape(re.sub(r"<[^>]+>", "", html_texto))
+
+
+def mensaje_noticia(n, avisar=True, con_cabecera=True):
+    nivel = n.get("nivel", 2)
+    barra, etiqueta = NIVELES.get(nivel, NIVELES[2])
+    lineas = []
+    mencion = f" · {MENCION}" if avisar and nivel >= NIVEL_MENCION and MENCION else ""
+    if con_cabecera:
+        lineas += [f"{barra} <b>{etiqueta}</b>{mencion}", f"<b>{e(TEMAS.get(n.get('tema'), '🌍 OTROS'))}</b>", ""]
+    elif mencion:
+        lineas += [f"🚨 {MENCION}", ""]
+    lineas.append(f"<b>{e(n.get('titulo_es') or titular_limpio(n))}</b>")
     if n.get("que_pasa"):
         lineas += ["", f"📝 <b>Qué pasa:</b> {e(n['que_pasa'])}"]
     if n.get("por_que_importa"):
@@ -429,8 +445,21 @@ def mensaje_noticia(n, avisar=True):
     enlaces = f'🔗 <a href="{e(n["enlace"])}">Leer</a>'
     if WEB:
         enlaces += f' · 🌐 <a href="{e(enlace_web("n-" + n["id"]))}">Web</a>'
-    lineas += ["", pie, enlaces]
+    lineas += ["", pie, enlaces, f"{ETIQUETAS.get(nivel, '#normal')} #{n.get('tema', 'otros')}"]
     return "\n".join(lineas)
+
+
+def enviar_noticia(n, avisar, silencioso):
+    """Las urgentes e importantes van con una franja de color arriba (imagen); el resto, en texto."""
+    nivel = n.get("nivel", 2)
+    if nivel >= 4 and WEB:
+        texto = mensaje_noticia(n, avisar, con_cabecera=False)
+        if len(texto_plano(texto)) <= 1000:
+            foto = enlace_web().split("#")[0] + f"img/n{nivel}-{n.get('tema', 'otros')}.png"
+            if telegram(texto, silencioso=silencioso, foto=foto):
+                return True
+            TG["errores"] -= 1  # no cuenta como error: se reintenta en texto
+    return telegram(mensaje_noticia(n, avisar), vista_previa=nivel >= 4, silencioso=silencioso)
 
 
 def mensaje_resumen(r, iconos):
@@ -587,8 +616,7 @@ def main():
             telegram(mensaje_agrupado(extra, f"🗞️ Otras {len(extra)} noticias", iconos), silencioso=True)
         for n in sueltas:
             importante = n.get("nivel", 0) >= NIVEL_MENCION
-            telegram(mensaje_noticia(n, avisar=importante and not noche),
-                     vista_previa=importante, silencioso=not importante or noche)
+            enviar_noticia(n, avisar=importante and not noche, silencioso=not importante or noche)
             if importante and noche:
                 pendientes.append({k: n.get(k) for k in ("titulo", "titulo_es", "enlace", "seccion", "tema", "nivel", "medio")})
             time.sleep(1.1)  # Telegram no deja más de ~1 mensaje por segundo
@@ -598,7 +626,8 @@ def main():
                 avisados.add(r["id"])
 
     # Al lanzarlo a mano con el botón "Run workflow", manda un mensaje de prueba
-    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+    # (no cuando se relanza solo: entonces el actor es github-actions[bot])
+    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch" and "[bot]" not in os.environ.get("GITHUB_ACTOR", ""):
         telegram(f"✅ <b>Radar del Podcast funcionando</b>\n{ok}/{len(fuentes)} fuentes leídas · {len(nuevas)} noticias nuevas · {sum(1 for n in avisos if n.get('nivel', 0) >= NIVEL_MENCION)} urgentes.")
 
     # 4. Guardar todo
