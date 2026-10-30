@@ -1,13 +1,13 @@
 {
-  "actualizado": "2026-10-29T23:16:17+00:00",
-  "noticias": 2057,
-  "nuevas_en_esta_ronda": 289,
+  "actualizado": "2026-10-30T02:46:50+00:00",
+  "noticias": 2177,
+  "nuevas_en_esta_ronda": 123,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
     "peticiones": 4,
-    "errores": 0,
-    "ultimo_error": "",
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-flash-lite-latest: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"4b220f3459f4f9ff\\\",\\n      \\\"titulo\\\" | gemini-flash-latest: The read operation timed out  | gemini-2.5-flash-lite: HTTP Error 404: Not Found [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for t",
     "traducidas": 80,
     "error_traductor": "",
     "clave": "sí"
