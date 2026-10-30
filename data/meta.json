@@ -1,11 +1,9 @@
 {
-  "actualizado": "2026-10-30T10:25:46+00:00",
+  "actualizado": "2026-10-30T10:29:29+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
-  "fuentes_ok": 77,
-  "fuentes_fallidas": {
-    "MIT Technology Review": "HTTPError: HTTP Error 403: Forbidden"
-  },
+  "nuevas_en_esta_ronda": 8,
+  "fuentes_ok": 78,
+  "fuentes_fallidas": {},
   "ia": {
     "peticiones": 1,
     "errores": 0,
