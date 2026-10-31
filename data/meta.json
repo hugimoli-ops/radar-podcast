@@ -1,14 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-31T13:26:28+00:00",
+  "actualizado": "2026-10-31T13:30:00+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 13,
-  "fuentes_ok": 77,
-  "fuentes_fallidas": {
-    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found"
-  },
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 78,
+  "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +14,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 11,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 11,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
