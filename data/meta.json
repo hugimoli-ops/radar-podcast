@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-31T00:34:15+00:00",
+  "actualizado": "2026-10-31T00:37:48+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 2,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "Google News: incidentes de IA": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+  },
   "ia": {
     "peticiones": 1,
     "errores": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
