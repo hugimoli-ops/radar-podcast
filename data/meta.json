@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-31T21:28:05+00:00",
+  "actualizado": "2026-10-31T21:31:58+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "PlayStation Blog": "TimeoutError: The read operation timed out"
+  },
   "ia": {
     "peticiones": 1,
     "errores": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
