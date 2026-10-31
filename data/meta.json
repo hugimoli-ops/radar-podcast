@@ -1,23 +1,23 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-31T11:43:52+00:00",
+  "actualizado": "2026-10-31T11:50:01+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
+  "nuevas_en_esta_ronda": 14,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "peticiones": 2,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"403c0862c7c8d748\\\",\\n      \\\"titulo\\\" | gemini-flash-lite-latest: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"403c0862c7c8d748\\\",\\n      \\\"titulo\\\" | gemini-3.5-flash: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\":",
+    "traducidas": 10,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 14,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 14,
     "fotos_fallidas": 0
   }
 }
