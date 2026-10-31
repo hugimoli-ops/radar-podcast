@@ -1,15 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-10-31T14:46:46+00:00",
+  "actualizado": "2026-10-31T14:50:31+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found"
+  },
   "ia": {
     "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
-    "traducidas": 1,
+    "traducidas": 0,
     "error_traductor": "",
     "clave": "sí"
   },
