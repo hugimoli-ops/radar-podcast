@@ -1,12 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-01T07:05:20+00:00",
+  "actualizado": "2026-11-01T07:09:04+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 17,
+  "nuevas_en_esta_ronda": 7,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +14,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 16,
+    "enviados": 7,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n3-ia.png",
-    "fotos": 15,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 7,
+    "fotos_fallidas": 0
   }
 }
