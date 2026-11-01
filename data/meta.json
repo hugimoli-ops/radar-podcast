@@ -1,12 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-01T03:25:27+00:00",
+  "actualizado": "2026-11-01T03:28:52+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 0,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "HTTPError: HTTP Error 502: Bad Gateway"
+  },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
