@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T02:09:46+00:00",
+  "actualizado": "2026-11-02T02:13:34+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 1,
+  "nuevas_en_esta_ronda": 0,
   "fuentes_ok": 46,
   "fuentes_fallidas": {
     "Yahoo Finance": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -39,7 +39,7 @@
     "Forbes (startups y millonarios)": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -47,10 +47,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 1,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
