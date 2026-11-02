@@ -1,12 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T08:02:21+00:00",
+  "actualizado": "2026-11-02T08:06:40+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 14,
-  "fuentes_ok": 77,
-  "fuentes_fallidas": {
-    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>"
-  },
+  "nuevas_en_esta_ronda": 13,
+  "fuentes_ok": 78,
+  "fuentes_fallidas": {},
   "ia": {
     "peticiones": 2,
     "errores": 0,
@@ -16,10 +14,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 12,
+    "enviados": 13,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 12,
+    "fotos": 13,
     "fotos_fallidas": 0
   }
 }
