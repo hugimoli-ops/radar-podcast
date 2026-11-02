@@ -1,12 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T16:47:09+00:00",
+  "actualizado": "2026-11-02T16:51:25+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 13,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 22,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "El Referente": "HTTPError: HTTP Error 526: <none>"
+  },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 10,
+    "enviados": 18,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 10,
+    "fotos": 18,
     "fotos_fallidas": 0
   }
 }
