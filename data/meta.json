@@ -1,12 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T15:18:20+00:00",
+  "actualizado": "2026-11-02T15:22:35+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 8,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 25,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "HTTPError: HTTP Error 502: Bad Gateway"
+  },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 20,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n2-otros.png",
-    "fotos": 6,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 20,
+    "fotos_fallidas": 0
   }
 }
