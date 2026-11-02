@@ -1,6 +1,6 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T07:02:34+00:00",
+  "actualizado": "2026-11-02T07:06:26+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 4,
   "fuentes_ok": 78,
@@ -14,10 +14,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
