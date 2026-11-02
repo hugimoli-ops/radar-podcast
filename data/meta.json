@@ -1,11 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T17:30:22+00:00",
+  "actualizado": "2026-11-02T17:35:43+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 13,
+  "nuevas_en_esta_ronda": 6,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "El Referente": "TimeoutError: The read operation timed out"
+    "El Referente": "HTTPError: HTTP Error 403: Forbidden"
   },
   "ia": {
     "peticiones": 1,
@@ -16,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 8,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
