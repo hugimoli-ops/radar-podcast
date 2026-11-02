@@ -1,11 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T22:58:44+00:00",
+  "actualizado": "2026-11-02T23:03:01+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 1,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "NASA": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
+    "The Decoder": "URLError: <urlopen error timed out>"
   },
   "ia": {
     "peticiones": 1,
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
