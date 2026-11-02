@@ -1,12 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-02T19:14:49+00:00",
+  "actualizado": "2026-11-02T19:29:03+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 20,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "El Referente": "TimeoutError: The read operation timed out"
+  },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 6,
+    "enviados": 16,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 6,
+    "fotos": 16,
     "fotos_fallidas": 0
   }
 }
