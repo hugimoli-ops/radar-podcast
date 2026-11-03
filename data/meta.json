@@ -1,10 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-03T11:04:03+00:00",
+  "actualizado": "2026-11-03T11:08:03+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 76,
+  "fuentes_fallidas": {
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
+    "Expansión Mercados": "TimeoutError: The read operation timed out"
+  },
   "ia": {
     "peticiones": 1,
     "errores": 0,
@@ -14,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 7,
+    "fotos": 8,
     "fotos_fallidas": 0
   }
 }
