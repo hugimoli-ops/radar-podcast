@@ -1,23 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-03T13:18:12+00:00",
+  "actualizado": "2026-11-03T13:22:34+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 16,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 17,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "HTTPError: HTTP Error 502: Bad Gateway"
+  },
   "ia": {
     "peticiones": 2,
-    "errores": 1,
-    "ultimo_error": "ValueError: gemini-3.5-flash-lite: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"e784326aff2398b7\\\",\\n      \\\"titulo\\\" | gemini-flash-lite-latest: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"e784326aff2398b7\\\",\\n      \\\"titulo\\\" | gemini-3.5-flash: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\":",
-    "traducidas": 10,
+    "errores": 0,
+    "ultimo_error": "",
+    "traducidas": 0,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 14,
+    "enviados": 15,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 14,
+    "fotos": 15,
     "fotos_fallidas": 0
   }
 }
