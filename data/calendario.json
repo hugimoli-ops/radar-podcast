@@ -1,0 +1,323 @@
+{
+ "_ayuda": "Eventos del calendario semanal (#calendario). Se actualiza con cada dossier. fecha/fin en AAAA-MM-DD; estado: confirmado o previsto.",
+ "eventos": [
+  {
+   "fecha": "2026-11-02",
+   "titulo": "Resultados de Apple",
+   "explicacion": "Apple cuenta cuánto ha vendido este trimestre (iPhone, servicios, IA). Si decepciona, arrastra al Nasdaq y a los ETF tecnológicos.",
+   "tema": "inversiones",
+   "estado": "previsto"
+  },
+  {
+   "fecha": "2026-11-03",
+   "titulo": "Elecciones de mitad de mandato en EE. UU. (midterms)",
+   "explicacion": "Se renueva el Congreso. Si Trump pierde la mayoría, le costará más aprobar leyes y aranceles; los mercados suelen moverse con el resultado.",
+   "tema": "politica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-03",
+   "hora": "19:00",
+   "titulo": "Dolores Redondo en el Patio de la Infanta",
+   "explicacion": "La autora de la trilogía del Baztán presenta libro en Zaragoza: charla con una autora muy conocida.",
+   "tema": "zaragoza",
+   "estado": "confirmado",
+   "lugar": "Patio de la Infanta, Zaragoza"
+  },
+  {
+   "fecha": "2026-11-03",
+   "titulo": "Champions: Barça–Aston Villa, Atlético–Bayern y Villarreal–PSG",
+   "explicacion": "Jornada de Champions con tres equipos españoles; el Atlético–Bayern es el partidazo de la noche.",
+   "tema": "deportes",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-04",
+   "titulo": "Champions: AEK–Real Madrid y Dortmund–Betis",
+   "explicacion": "Segunda noche europea: el Madrid visita Atenas y el Betis juega en el Westfalenstadion.",
+   "tema": "deportes",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-05",
+   "fin": "2026-11-15",
+   "titulo": "Concurso de Tapas de Zaragoza",
+   "explicacion": "Los bares de Zaragoza compiten con tapas a precio cerrado. Plan barato para ir con los amigos y buen tema \"de casa\" para el podcast.",
+   "tema": "zaragoza",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-05",
+   "titulo": "Lluvia de estrellas Táuridas del Sur",
+   "explicacion": "Pocas estrellas fugaces pero lentas y brillantes (bólidos). Mejor lejos de la ciudad, después de medianoche.",
+   "tema": "ciencia",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-06",
+   "titulo": "Resultados de Moderna",
+   "explicacion": "Primera vez que Moderna presenta cuentas tras los datos de su vacuna con Merck. Puede mover mucho la acción, en cualquier dirección.",
+   "tema": "inversiones",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-06",
+   "titulo": "Fyahbwoy en la Sala López",
+   "explicacion": "Concierto de reggae del madrileño en Zaragoza.",
+   "tema": "musica",
+   "estado": "confirmado",
+   "lugar": "Sala López, Zaragoza"
+  },
+  {
+   "fecha": "2026-11-07",
+   "hora": "21:00",
+   "titulo": "Bryan Adams en el Pabellón Príncipe Felipe",
+   "explicacion": "Concierto grande en Zaragoza de la gira mundial de Bryan Adams.",
+   "tema": "musica",
+   "estado": "confirmado",
+   "lugar": "Pabellón Príncipe Felipe, Zaragoza"
+  },
+  {
+   "fecha": "2026-11-07",
+   "titulo": "Angel Stanich en Zaragoza",
+   "explicacion": "Concierto del rockero de culto en la ciudad.",
+   "tema": "musica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-07",
+   "titulo": "N7 Day de Mass Effect",
+   "explicacion": "Día anual de la saga Mass Effect, en el que BioWare suele dar novedades.",
+   "tema": "videojuegos",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-07",
+   "titulo": "Posible roadshow de la salida a bolsa de Anthropic",
+   "explicacion": "Sería la gira de presentaciones a grandes inversores antes de cotizar en Nasdaq como «ANT». Fecha según prensa, no confirmada.",
+   "tema": "inversiones",
+   "estado": "previsto"
+  },
+  {
+   "fecha": "2026-11-10",
+   "titulo": "Previsiones de energía de la EIA",
+   "explicacion": "La agencia de energía de EE. UU. publica sus previsiones de petróleo y gas: pistas para el precio de la gasolina.",
+   "tema": "inversiones",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-11",
+   "titulo": "Huelga general en España",
+   "explicacion": "Paro convocado por los sindicatos en plena precampaña. Habrá servicios mínimos (aún por publicar) y problemas de transporte.",
+   "tema": "economia",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-12",
+   "titulo": "Votación de los decretos de vivienda",
+   "explicacion": "El Congreso (Diputación Permanente) vota los decretos de alquiler. Se espera muy ajustada, según la prensa 35-34.",
+   "tema": "economia",
+   "estado": "previsto"
+  },
+  {
+   "fecha": "2026-11-12",
+   "titulo": "Latin Grammy",
+   "explicacion": "Gala de los premios de la música latina, con Rosalía entre las favoritas.",
+   "tema": "musica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-12",
+   "titulo": "Precarga de GTA VI y Táuridas del Norte",
+   "explicacion": "Ya se puede descargar GTA VI para jugar el día 19. Esa noche, además, pico de las Táuridas del Norte.",
+   "tema": "videojuegos",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-12",
+   "fin": "2026-11-15",
+   "titulo": "ZAF, feria de arte contemporáneo de Zaragoza",
+   "explicacion": "Feria de galerías de arte, gratis. Plan distinto para el finde.",
+   "tema": "zaragoza",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-12",
+   "fin": "2026-11-22",
+   "titulo": "Festival de Jazz de Zaragoza",
+   "explicacion": "Diez días de conciertos de jazz por la ciudad.",
+   "tema": "zaragoza",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-13",
+   "titulo": "Empieza la campaña electoral del 29N",
+   "explicacion": "Arrancan oficialmente los mítines, carteles y debates de las generales.",
+   "tema": "politica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-16",
+   "titulo": "Cara a cara Sánchez–Feijóo",
+   "explicacion": "Debate a dos entre los candidatos del PSOE y del PP, en Mediaset. Suele marcar la recta final de la campaña.",
+   "tema": "politica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-16",
+   "titulo": "Marte y Júpiter juntos al amanecer",
+   "explicacion": "Los dos planetas aparecen muy cerca en el cielo antes de salir el sol. Se ve a simple vista.",
+   "tema": "ciencia",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-17",
+   "fin": "2026-11-18",
+   "titulo": "Lluvia de Leónidas",
+   "explicacion": "Una de las lluvias de estrellas más famosas. Mejor de madrugada mirando al este.",
+   "tema": "ciencia",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-19",
+   "titulo": "Sale GTA VI",
+   "explicacion": "El videojuego más esperado de la década. Las reseñas podrían salir el día 18 (filtración, no oficial).",
+   "tema": "videojuegos",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-19",
+   "titulo": "Último día para pedir el voto por correo",
+   "explicacion": "Si no vas a estar el 29N en tu ciudad, hoy es el último día para pedirlo en Correos.",
+   "tema": "politica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-21",
+   "titulo": "Hombres G en el Príncipe Felipe",
+   "explicacion": "Concierto de los clásicos del pop español en Zaragoza.",
+   "tema": "musica",
+   "estado": "confirmado",
+   "lugar": "Pabellón Príncipe Felipe, Zaragoza"
+  },
+  {
+   "fecha": "2026-11-21",
+   "fin": "2027-01-10",
+   "titulo": "Cenicienta sobre hielo en Puerto Venecia",
+   "explicacion": "Espectáculo de patinaje en el centro comercial, hasta el 10 de enero.",
+   "tema": "zaragoza",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-23",
+   "titulo": "Último día para publicar encuestas",
+   "explicacion": "Después de hoy no se pueden publicar sondeos electorales en España.",
+   "tema": "politica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-24",
+   "fin": "2026-11-25",
+   "titulo": "AUCON: congreso del coche autónomo en Zaragoza",
+   "explicacion": "Waymo, Uber y Cabify hablan de coches sin conductor en Zaragoza. Muy de emprendimiento e IA.",
+   "tema": "emprendimiento",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-24",
+   "titulo": "Luna llena junto a las Pléyades",
+   "explicacion": "La Luna pasa al lado del cúmulo de las Pléyades: foto fácil con el móvil.",
+   "tema": "ciencia",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-25",
+   "titulo": "Urano en oposición",
+   "explicacion": "Urano está en su punto más cercano y brillante del año: con prismáticos se ve.",
+   "tema": "ciencia",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-11-26",
+   "titulo": "Cecilia Bartoli y Lang Lang en el Auditorio",
+   "explicacion": "Dos estrellas mundiales de la música clásica en Zaragoza la misma noche.",
+   "tema": "musica",
+   "estado": "confirmado",
+   "lugar": "Auditorio de Zaragoza"
+  },
+  {
+   "fecha": "2026-11-26",
+   "titulo": "Fecha límite de los rumores para que cotice Anthropic",
+   "explicacion": "Según la prensa, Anthropic querría estar en bolsa antes de esta fecha. No es oficial.",
+   "tema": "inversiones",
+   "estado": "previsto"
+  },
+  {
+   "fecha": "2026-11-27",
+   "fin": "2026-11-28",
+   "titulo": "Fito & Fitipaldis en el Auditorio",
+   "explicacion": "Dos noches de Fito en Zaragoza.",
+   "tema": "musica",
+   "estado": "confirmado",
+   "lugar": "Auditorio de Zaragoza"
+  },
+  {
+   "fecha": "2026-11-29",
+   "titulo": "Elecciones generales",
+   "explicacion": "España vota. Define gobierno, vivienda, impuestos y pensiones para los próximos años.",
+   "tema": "politica",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-12-01",
+   "titulo": "Lorenzo Silva en Zaragoza",
+   "explicacion": "Charla del autor de la saga Bevilacqua y Chamorro.",
+   "tema": "zaragoza",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-12-09",
+   "fin": "2026-12-09",
+   "titulo": "Reunión de la Fed con nuevas previsiones",
+   "explicacion": "La Reserva Federal decide tipos y publica sus previsiones: mueve bolsa, dólar y criptos.",
+   "tema": "inversiones",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-12-12",
+   "titulo": "Bunbury en el Príncipe Felipe",
+   "explicacion": "El zaragozano toca en casa. Entradas agotadas.",
+   "tema": "musica",
+   "estado": "confirmado",
+   "lugar": "Pabellón Príncipe Felipe, Zaragoza"
+  },
+  {
+   "fecha": "2026-12-15",
+   "titulo": "Nominaciones de los Goya",
+   "explicacion": "Se anuncian los candidatos a los premios del cine español.",
+   "tema": "cine",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-12-15",
+   "titulo": "José Antonio Marina en Zaragoza",
+   "explicacion": "Charla del filósofo y pedagogo.",
+   "tema": "zaragoza",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2026-12-18",
+   "titulo": "Estreno de Dune: Parte Tres y Avengers: Doomsday",
+   "explicacion": "Choque de titanes en la cartelera el mismo día.",
+   "tema": "cine",
+   "estado": "confirmado"
+  },
+  {
+   "fecha": "2027-02-06",
+   "titulo": "Gala de los Goya",
+   "explicacion": "La gran noche del cine español.",
+   "tema": "cine",
+   "estado": "confirmado"
+  }
+ ]
+}

@@ -31,6 +31,7 @@ FUENTES = RAIZ / "fuentes.json"
 NOTICIAS = DATA / "noticias.json"
 RESUMENES = DATA / "resumenes.json"
 ESTADO = DATA / "estado.json"
+CALENDARIO = DATA / "calendario.json"
 META = DATA / "meta.json"
 
 DIAS_A_GUARDAR = 10          # las noticias más antiguas se borran de la web
@@ -48,6 +49,7 @@ IA_PETICIONES_POR_RONDA = 4
 IA_PETICIONES_POR_DIA = 400  # muy por debajo del límite gratis de Gemini
 HORAS_SILENCIO = (0, 8)      # de 00:00 a 08:00 (hora de Madrid) no se envía nada; se junta en un resumen
 ZONA = "Europe/Madrid"
+CALENDARIO_DIA_HORA = (0, 9)  # lunes (0) a las 9:00: calendario semanal
 
 UA = "Mozilla/5.0 (compatible; PodcastNoticiasBot/1.0; +https://github.com)"
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -352,6 +354,101 @@ def enriquecer(noticias, nombres, estado):
     estado["ia_uso"] = uso
 
 
+# ----------------------------------------------------------------- calendario semanal
+DIAS = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
+MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"]
+
+
+def fecha_corta(d):
+    return f"{DIAS[d.weekday()]} {d.day} {MESES[d.month - 1]}"
+
+
+def linea_evento(ev, con_fecha=False):
+    ic = TEMAS.get(ev.get("tema"), "🌍 OTROS").split(" ")[0]
+    ini = dt.date.fromisoformat(ev["fecha"])
+    cuando = ""
+    if con_fecha:
+        cuando = fecha_corta(ini)
+        if ev.get("fin") and ev["fin"] != ev["fecha"]:
+            cuando += " – " + fecha_corta(dt.date.fromisoformat(ev["fin"]))
+        cuando = f"<b>{cuando}</b> · "
+    extra = []
+    if ev.get("hora"):
+        extra.append(ev["hora"])
+    if ev.get("lugar"):
+        extra.append(ev["lugar"])
+    if ev.get("estado") == "previsto":
+        extra.append("<i>previsto, sin confirmar</i>")
+    texto = f"{ic} {cuando}<b>{e(ev['titulo'])}</b>"
+    if extra:
+        texto += " (" + " · ".join(x if x.startswith("<i>") else e(x) for x in extra) + ")"
+    if ev.get("explicacion"):
+        texto += f"\n      ↳ {e(ev['explicacion'])}"
+    return texto
+
+
+def mensajes_calendario(eventos, lunes):
+    domingo = lunes + dt.timedelta(days=6)
+    def dias_de(ev):
+        ini = dt.date.fromisoformat(ev["fecha"])
+        fin = dt.date.fromisoformat(ev.get("fin") or ev["fecha"])
+        return ini, fin
+    semana, despues = [], []
+    for ev in eventos:
+        ini, fin = dias_de(ev)
+        if fin < lunes:
+            continue
+        (semana if ini <= domingo else despues).append(ev)
+    titulo = f"📅 <b>CALENDARIO · semana del {lunes.day} {MESES[lunes.month - 1]} al {domingo.day} {MESES[domingo.month - 1]}</b>"
+    bloques = [f"🗓️ <b>ESTA SEMANA</b> ({len(semana)})"]
+    for i in range(7):
+        dia = lunes + dt.timedelta(days=i)
+        del_dia = [ev for ev in semana if dias_de(ev)[0] == dia or (i == 0 and dias_de(ev)[0] < lunes)]
+        if del_dia:
+            bloques.append(f"\n<b>▪️ {fecha_corta(dia).upper()}</b>\n" + "\n".join(linea_evento(ev) for ev in del_dia))
+    if despues:
+        bloques.append(f"\n\n🔭 <b>MÁS ADELANTE</b> ({len(despues)})")
+        mes = None
+        for ev in despues:
+            ini = dt.date.fromisoformat(ev["fecha"])
+            if ini.month != mes:
+                mes = ini.month
+                bloques.append(f"\n<b>— {['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'][mes - 1]} {ini.year} —</b>")
+            bloques.append(linea_evento(ev, con_fecha=True))
+    # Se parte en mensajes de menos de 3.500 caracteres
+    mensajes, actual = [], ""
+    for b in bloques:
+        if len(actual) + len(b) > 3500:
+            mensajes.append(actual)
+            actual = ""
+        actual += b + "\n"
+    if actual:
+        mensajes.append(actual)
+    total = len(mensajes)
+    mensajes = [m.rstrip() + f"\n\n#calendario" + (f" · {i + 1}/{total}" if total > 1 else "") for i, m in enumerate(mensajes)]
+    portada = f"{titulo}\n{len(semana)} citas esta semana y {len(despues)} más adelante.\nSale de las fechas de los dossiers semanales.\n\n#calendario"
+    return portada, mensajes
+
+
+def enviar_calendario(estado, forzar=False):
+    ahora_md = hora_madrid()
+    lunes = ahora_md.date() - dt.timedelta(days=ahora_md.weekday())
+    semana = lunes.isoformat()
+    ya_toca = ahora_md.weekday() > CALENDARIO_DIA_HORA[0] or ahora_md.hour >= CALENDARIO_DIA_HORA[1]
+    if not forzar and (estado.get("calendario_enviado") == semana or not ya_toca):
+        return
+    eventos = sorted(leer_json(CALENDARIO, {}).get("eventos", []), key=lambda ev: ev["fecha"])
+    if not eventos or not TOKEN:
+        return
+    portada, mensajes = mensajes_calendario(eventos, lunes)
+    ok = telegram(portada, foto="calendario.png") or telegram(portada)
+    for m in mensajes:
+        ok = telegram(m, silencioso=True) and ok
+        time.sleep(1.1)
+    if ok:
+        estado["calendario_enviado"] = semana
+
+
 # ----------------------------------------------------------------- Telegram
 FOTOS_IDS = {}  # nombre de la imagen -> código de Telegram (se guarda en estado.json)
 TG = {"enviados": 0, "errores": 0, "ultimo_error": "", "fotos": 0, "fotos_fallidas": 0}
@@ -650,6 +747,9 @@ def main():
         for r in resumenes_nuevos[:5]:
             if telegram(mensaje_resumen(r, iconos)) or not TOKEN:
                 avisados.add(r["id"])
+
+    if not primera_vez:
+        enviar_calendario(estado)
 
     # Al lanzarlo a mano con el botón "Run workflow", manda un mensaje de prueba
     # (no cuando se relanza solo: entonces el actor es github-actions[bot])
