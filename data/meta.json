@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-04T12:00:58+00:00",
+  "actualizado": "2026-11-04T12:05:23+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 8,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>"
+  },
   "ia": {
     "peticiones": 1,
     "errores": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 7,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 8,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n4-inversiones.png",
+    "fotos": 6,
+    "fotos_fallidas": 1
   }
 }
