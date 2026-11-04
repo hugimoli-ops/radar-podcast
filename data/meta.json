@@ -1,12 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-04T19:10:21+00:00",
+  "actualizado": "2026-11-04T19:14:13+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 28,
+  "nuevas_en_esta_ronda": 12,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 3,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +14,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 27,
+    "enviados": 9,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 27,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n4-inversiones.png",
+    "fotos": 8,
+    "fotos_fallidas": 1
   }
 }
