@@ -1,14 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-04T19:18:39+00:00",
+  "actualizado": "2026-11-04T19:22:38+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 14,
+  "nuevas_en_esta_ronda": 9,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "AS": "TimeoutError: The read operation timed out"
+    "VGC": "TimeoutError: The read operation timed out"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 11,
+    "enviados": 7,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 11,
+    "fotos": 7,
     "fotos_fallidas": 0
   }
 }
