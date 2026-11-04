@@ -1,12 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-04T20:23:14+00:00",
+  "actualizado": "2026-11-04T20:26:58+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 32,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "The Decoder": "HTTPError: HTTP Error 500: Internal Server Error"
+  },
   "ia": {
-    "peticiones": 4,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 31,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 31,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
