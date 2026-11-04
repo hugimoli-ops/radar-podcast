@@ -1,12 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-04T19:14:13+00:00",
+  "actualizado": "2026-11-04T19:18:39+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 12,
-  "fuentes_ok": 78,
-  "fuentes_fallidas": {},
+  "nuevas_en_esta_ronda": 14,
+  "fuentes_ok": 77,
+  "fuentes_fallidas": {
+    "AS": "TimeoutError: The read operation timed out"
+  },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -14,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 9,
+    "enviados": 11,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n4-inversiones.png",
-    "fotos": 8,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 11,
+    "fotos_fallidas": 0
   }
 }
