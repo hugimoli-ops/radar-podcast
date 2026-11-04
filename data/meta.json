@@ -1,23 +1,23 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-04T11:21:11+00:00",
+  "actualizado": "2026-11-04T11:26:14+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 139,
+  "nuevas_en_esta_ronda": 33,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
-    "peticiones": 4,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
-    "traducidas": 80,
+    "traducidas": 0,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 41,
+    "enviados": 15,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n2-ciencia.png",
-    "fotos": 39,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 15,
+    "fotos_fallidas": 0
   }
 }
