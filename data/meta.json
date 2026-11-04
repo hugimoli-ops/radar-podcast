@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-04T20:41:51+00:00",
+  "actualizado": "2026-11-04T20:46:18+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 10,
+  "nuevas_en_esta_ronda": 12,
   "fuentes_ok": 78,
   "fuentes_fallidas": {},
   "ia": {
@@ -16,8 +16,8 @@
   "telegram": {
     "enviados": 8,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 8,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 101] Network is unreachable>  · n2-deportes.png",
+    "fotos": 7,
+    "fotos_fallidas": 1
   }
 }
