@@ -1,25 +1,26 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-05T13:02:33+00:00",
+  "actualizado": "2026-11-05T13:06:25+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 1,
-    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
-    "traducidas": 5,
+    "errores": 0,
+    "ultimo_error": "",
+    "traducidas": 0,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 5,
+    "fotos": 8,
     "fotos_fallidas": 0
   }
 }
