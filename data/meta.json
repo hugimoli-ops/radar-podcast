@@ -1,6 +1,6 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-05T10:15:31+00:00",
+  "actualizado": "2026-11-05T10:23:43+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 20,
   "fuentes_ok": 77,
@@ -9,9 +9,9 @@
   },
   "ia": {
     "peticiones": 2,
-    "errores": 1,
+    "errores": 2,
     "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
-    "traducidas": 10,
+    "traducidas": 17,
     "error_traductor": "",
     "clave": "sí"
   },
