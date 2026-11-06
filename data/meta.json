@@ -1,6 +1,6 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-06T12:15:34+00:00",
+  "actualizado": "2026-11-06T12:20:44+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 20,
   "fuentes_ok": 77,
@@ -18,8 +18,8 @@
   "telegram": {
     "enviados": 15,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 15,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n4-inversiones.png",
+    "fotos": 14,
+    "fotos_fallidas": 1
   }
 }
