@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-07T12:02:18+00:00",
+  "actualizado": "2026-11-07T12:06:01+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
+  "nuevas_en_esta_ronda": 7,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
