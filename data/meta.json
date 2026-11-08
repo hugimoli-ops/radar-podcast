@@ -1,6 +1,6 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-08T09:20:43+00:00",
+  "actualizado": "2026-11-08T09:24:12+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 4,
   "fuentes_ok": 77,
@@ -17,9 +17,9 @@
   },
   "telegram": {
     "enviados": 3,
-    "errores": 1,
-    "ultimo_error": "sendMessage TimeoutError: The read operation timed out  · ",
+    "errores": 0,
+    "ultimo_error": "",
     "fotos": 3,
-    "fotos_fallidas": 1
+    "fotos_fallidas": 0
   }
 }
