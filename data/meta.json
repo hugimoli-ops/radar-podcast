@@ -1,10 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-08T14:01:07+00:00",
+  "actualizado": "2026-11-08T14:04:52+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "NASA": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 9,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 9,
     "fotos_fallidas": 0
   }
 }
