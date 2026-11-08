@@ -1,11 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-08T04:47:43+00:00",
+  "actualizado": "2026-11-08T04:51:37+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
+  "nuevas_en_esta_ronda": 8,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "ESA": "TimeoutError: The read operation timed out"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
