@@ -1,24 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-08T17:22:50+00:00",
+  "actualizado": "2026-11-08T17:26:39+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 64,
+  "nuevas_en_esta_ronda": 9,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Casa Blanca": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: activistas y participaciones": "HTTPError: HTTP Error 503: Service Unavailable",
-    "The Information (titulares)": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: compras de empresas": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google DeepMind": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: vivienda y leyes": "HTTPError: HTTP Error 503: Service Unavailable",
-    "ESPN": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: cartas (TCG)": "HTTPError: HTTP Error 503: Service Unavailable",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 503: Service Unavailable"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
@@ -29,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 9,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 9,
     "fotos_fallidas": 0
   }
 }
