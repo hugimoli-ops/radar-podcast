@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-09T01:12:00+00:00",
+  "actualizado": "2026-11-09T01:15:47+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
+  "nuevas_en_esta_ronda": 5,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
@@ -16,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 5,
     "errores": 0,
-    "ultimo_error": "sendPhoto TimeoutError: The read operation timed out  · n2-moda.png",
-    "fotos": 0,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 5,
+    "fotos_fallidas": 0
   }
 }
