@@ -1,11 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-10T03:57:44+00:00",
+  "actualizado": "2026-11-10T04:01:14+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 1,
+  "nuevas_en_esta_ronda": 2,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
+    "Hacker News (lo más votado)": "HTTPError: HTTP Error 502: Bad Gateway",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
