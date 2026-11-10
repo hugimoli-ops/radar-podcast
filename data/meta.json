@@ -1,14 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-10T13:55:12+00:00",
+  "actualizado": "2026-11-10T13:59:08+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 15,
+  "nuevas_en_esta_ronda": 9,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 15,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 15,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
