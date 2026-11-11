@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-11T10:11:31+00:00",
+  "actualizado": "2026-11-11T10:15:24+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 9,
+    "enviados": 4,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n4-ia.png",
-    "fotos": 7,
-    "fotos_fallidas": 2
+    "ultimo_error": "",
+    "fotos": 4,
+    "fotos_fallidas": 0
   }
 }
