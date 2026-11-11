@@ -1,25 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-11T18:31:16+00:00",
+  "actualizado": "2026-11-11T18:35:30+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
+  "nuevas_en_esta_ronda": 12,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 1,
-    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
-    "traducidas": 8,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"noticias\\\": [{\\\"id\\\": \\\"cd1ce6b711316667\\\", \\\"titulo\\\": \\\"\\\\u00bfDijo Donald Tr | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-3.5-flash: HTTP Error 42",
+    "traducidas": 10,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 11,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 8,
+    "fotos": 11,
     "fotos_fallidas": 0
   }
 }
