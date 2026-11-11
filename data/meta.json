@@ -1,10 +1,23 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-11T01:41:41+00:00",
+  "actualizado": "2026-11-11T01:45:37+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 1,
+  "fuentes_ok": 64,
   "fuentes_fallidas": {
+    "Casa Blanca": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: movimientos extremos": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: activistas y participaciones": "HTTPError: HTTP Error 503: Service Unavailable",
+    "The Information (titulares)": "TimeoutError: The read operation timed out",
+    "Google News: compras de empresas": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google DeepMind": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: IA en España": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: incidentes de IA": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: vivienda y leyes": "HTTPError: HTTP Error 503: Service Unavailable",
+    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 503: Service Unavailable",
+    "ESPN": "TimeoutError: The read operation timed out",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +29,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
