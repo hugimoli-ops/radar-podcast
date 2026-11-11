@@ -1,26 +1,26 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-11T16:06:32+00:00",
+  "actualizado": "2026-11-11T16:13:34+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 17,
+  "nuevas_en_esta_ronda": 31,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 2,
-    "errores": 2,
+    "peticiones": 3,
+    "errores": 3,
     "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
-    "traducidas": 14,
+    "traducidas": 28,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 14,
+    "enviados": 28,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n2-otros.png",
-    "fotos": 13,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 28,
+    "fotos_fallidas": 0
   }
 }
