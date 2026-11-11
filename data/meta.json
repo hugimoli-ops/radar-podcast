@@ -1,23 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-11T01:56:42+00:00",
+  "actualizado": "2026-11-11T02:00:33+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 1,
-  "fuentes_ok": 68,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 503: Service Unavailable",
-    "The Information (titulares)": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: compras de empresas": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google DeepMind": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 503: Service Unavailable",
-    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 503: Service Unavailable",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 0,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -25,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 0,
+    "enviados": 5,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 0,
+    "fotos": 5,
     "fotos_fallidas": 0
   }
 }
