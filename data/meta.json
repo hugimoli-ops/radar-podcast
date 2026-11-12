@@ -1,12 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-12T22:14:57+00:00",
+  "actualizado": "2026-11-12T22:18:49+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 7,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "ScienceDaily": "HTTPError: HTTP Error 521: <none>"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
@@ -17,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 5,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
