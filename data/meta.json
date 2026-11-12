@@ -1,25 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-12T19:43:54+00:00",
+  "actualizado": "2026-11-12T19:47:42+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
+  "nuevas_en_esta_ronda": 8,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"noticias\\\": [{\\\"id\\\": \\\"891958cc318ebd4d\\\", \\\"titulo\\\": \\\"Qu\\\\u00e9 significa l | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-3.5-flash: HTTP Error 42",
+    "traducidas": 6,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
