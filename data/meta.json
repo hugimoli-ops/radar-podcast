@@ -1,10 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-13T20:21:57+00:00",
+  "actualizado": "2026-11-13T20:26:00+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 6,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
