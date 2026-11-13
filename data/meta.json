@@ -1,14 +1,15 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-13T12:03:26+00:00",
+  "actualizado": "2026-11-13T12:07:16+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 17,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "HTTPError: HTTP Error 502: Bad Gateway",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 16,
+    "enviados": 8,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 16,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n2-emprendimiento.png",
+    "fotos": 7,
+    "fotos_fallidas": 1
   }
 }
