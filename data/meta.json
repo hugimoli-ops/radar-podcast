@@ -1,10 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-13T00:56:59+00:00",
+  "actualizado": "2026-11-13T01:00:43+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 2,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "RemoteDisconnected: Remote end closed connection without response",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
