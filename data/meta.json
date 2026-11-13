@@ -1,25 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-13T07:00:12+00:00",
+  "actualizado": "2026-11-13T07:05:41+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
+  "nuevas_en_esta_ronda": 3,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 429: Too Many Requests [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/d | gemini-flash-lite-latest: HTTP Error 429: Too Many Requests [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head t",
+    "traducidas": 2,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
