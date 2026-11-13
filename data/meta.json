@@ -1,12 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-13T21:39:26+00:00",
+  "actualizado": "2026-11-13T21:43:02+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
+  "nuevas_en_esta_ronda": 2,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google IA (blog)": "HTTPError: HTTP Error 500: Internal Server Error",
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
