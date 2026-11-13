@@ -1,14 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-13T18:04:03+00:00",
+  "actualizado": "2026-11-13T18:07:54+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 20,
+  "nuevas_en_esta_ronda": 15,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 17,
+    "enviados": 10,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 17,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n3-politica.png",
+    "fotos": 9,
+    "fotos_fallidas": 1
   }
 }
