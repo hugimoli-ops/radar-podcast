@@ -1,15 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-14T11:40:08+00:00",
+  "actualizado": "2026-11-14T11:43:59+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 13,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google IA (blog)": "TimeoutError: The read operation timed out",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -17,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 11,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 1,
+    "fotos": 11,
     "fotos_fallidas": 0
   }
 }
