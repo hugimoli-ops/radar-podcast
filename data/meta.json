@@ -1,35 +1,31 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-16T21:17:09+00:00",
+  "actualizado": "2026-11-16T21:23:02+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
-  "fuentes_ok": 67,
+  "nuevas_en_esta_ronda": 7,
+  "fuentes_ok": 71,
   "fuentes_fallidas": {
     "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: cartas (TCG)": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
+    "traducidas": 3,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
