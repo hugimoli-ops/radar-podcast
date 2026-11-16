@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-16T12:42:08+00:00",
+  "actualizado": "2026-11-16T12:46:00+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 3,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
+    "Google IA (blog)": "HTTPError: HTTP Error 500: Internal Server Error",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 5,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
