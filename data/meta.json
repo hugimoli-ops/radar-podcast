@@ -1,14 +1,15 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-16T02:57:20+00:00",
+  "actualizado": "2026-11-16T03:01:10+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 7,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 0,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 0,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 0,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
