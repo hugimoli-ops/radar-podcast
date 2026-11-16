@@ -1,23 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-16T22:33:59+00:00",
+  "actualizado": "2026-11-16T22:37:29+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 65,
+  "fuentes_ok": 71,
   "fuentes_fallidas": {
-    "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: cartas (TCG)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "The Information (titulares)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: streetwear y pop-ups": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -28,10 +22,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
