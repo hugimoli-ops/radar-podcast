@@ -1,25 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-16T13:21:38+00:00",
+  "actualizado": "2026-11-16T14:09:27+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 10,
+  "nuevas_en_esta_ronda": 89,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 4,
     "errores": 0,
     "ultimo_error": "",
-    "traducidas": 0,
+    "traducidas": 41,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
-    "errores": 0,
-    "ultimo_error": "",
-    "fotos": 8,
-    "fotos_fallidas": 0
+    "enviados": 40,
+    "errores": 1,
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n4-emprendimiento.png",
+    "fotos": 37,
+    "fotos_fallidas": 3
   }
 }
