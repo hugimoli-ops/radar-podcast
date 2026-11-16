@@ -1,25 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-16T14:19:14+00:00",
+  "actualizado": "2026-11-16T15:15:10+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 13,
+  "nuevas_en_esta_ronda": 104,
   "fuentes_ok": 77,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "peticiones": 4,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"ecce640f0aabf5ac\\\",\\n      \\\"titulo\\\" | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-3.5-flash: HTTP Error 50",
+    "traducidas": 68,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 41,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 8,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n3-ciencia.png",
+    "fotos": 38,
+    "fotos_fallidas": 2
   }
 }
