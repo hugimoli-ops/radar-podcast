@@ -1,26 +1,27 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T07:49:24+00:00",
+  "actualizado": "2026-11-17T07:53:05+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 0,
-  "fuentes_ok": 65,
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 64,
   "fuentes_fallidas": {
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: Real Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: fichajes": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 0,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -28,10 +29,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 0,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 0,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
