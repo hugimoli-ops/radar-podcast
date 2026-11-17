@@ -1,14 +1,15 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T13:03:25+00:00",
+  "actualizado": "2026-11-17T13:07:26+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 14,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 9,
+    "enviados": 12,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n2-cine.png",
-    "fotos": 7,
-    "fotos_fallidas": 2
+    "ultimo_error": "",
+    "fotos": 12,
+    "fotos_fallidas": 0
   }
 }
