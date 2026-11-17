@@ -1,27 +1,26 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T09:26:51+00:00",
+  "actualizado": "2026-11-17T09:32:41+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 6,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Hacker News (lo más votado)": "RemoteDisconnected: Remote end closed connection without response",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
+    "traducidas": 4,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 9,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 9,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
