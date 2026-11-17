@@ -1,23 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T01:47:16+00:00",
+  "actualizado": "2026-11-17T01:50:44+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 68,
+  "nuevas_en_esta_ronda": 0,
+  "fuentes_ok": 74,
   "fuentes_fallidas": {
-    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Real Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -25,10 +19,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
