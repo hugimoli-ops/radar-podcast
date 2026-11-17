@@ -1,27 +1,26 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T21:42:42+00:00",
+  "actualizado": "2026-11-17T21:47:00+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 6,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Hugging Face": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
-    "Marca": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
     "traducidas": 0,
-    "error_traductor": "",
+    "error_traductor": "HTTPError: HTTP Error 429: Too Many Requests",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 1,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
