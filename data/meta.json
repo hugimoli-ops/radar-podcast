@@ -1,22 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T01:07:25+00:00",
+  "actualizado": "2026-11-17T01:10:57+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
-  "fuentes_ok": 66,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: compras de empresas": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -27,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 6,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 6,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
