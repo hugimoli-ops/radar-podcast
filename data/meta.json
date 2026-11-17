@@ -1,19 +1,19 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T21:06:38+00:00",
+  "actualizado": "2026-11-17T21:12:22+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 4,
   "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
+    "traducidas": 3,
     "error_traductor": "",
     "clave": "sí"
   },
