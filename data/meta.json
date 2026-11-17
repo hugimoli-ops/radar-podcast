@@ -1,11 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T09:23:01+00:00",
+  "actualizado": "2026-11-17T09:26:51+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 9,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "Google News: streetwear y pop-ups": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -17,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 9,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 9,
     "fotos_fallidas": 0
   }
 }
