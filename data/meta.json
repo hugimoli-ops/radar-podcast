@@ -1,12 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T08:40:29+00:00",
+  "actualizado": "2026-11-17T08:44:10+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 7,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -17,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 8,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
