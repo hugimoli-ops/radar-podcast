@@ -1,21 +1,24 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T02:12:03+00:00",
+  "actualizado": "2026-11-17T02:15:32+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 1,
-  "fuentes_ok": 70,
+  "fuentes_ok": 67,
   "fuentes_fallidas": {
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: compras de empresas": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: streetwear y pop-ups": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -23,10 +26,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 1,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
