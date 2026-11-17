@@ -1,23 +1,22 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T08:06:42+00:00",
+  "actualizado": "2026-11-17T08:10:32+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 14,
-  "fuentes_ok": 68,
+  "nuevas_en_esta_ronda": 15,
+  "fuentes_ok": 69,
   "fuentes_fallidas": {
-    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: streetwear y pop-ups": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: cartas (TCG)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "The Information (titulares)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: compras de empresas": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: fichajes": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -25,10 +24,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 13,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 13,
+    "fotos": 8,
     "fotos_fallidas": 0
   }
 }
