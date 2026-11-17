@@ -1,26 +1,19 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T03:46:13+00:00",
+  "actualizado": "2026-11-17T03:49:39+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 65,
+  "nuevas_en_esta_ronda": 0,
+  "fuentes_ok": 72,
   "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: compras de empresas": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -28,10 +21,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
