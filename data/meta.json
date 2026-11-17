@@ -1,14 +1,16 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T13:42:56+00:00",
+  "actualizado": "2026-11-17T13:46:54+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 16,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 9,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 12,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 12,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
