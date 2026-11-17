@@ -1,24 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-17T01:54:16+00:00",
+  "actualizado": "2026-11-17T01:57:50+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 0,
-  "fuentes_ok": 67,
+  "nuevas_en_esta_ronda": 3,
+  "fuentes_ok": 74,
   "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: compras de empresas": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
     "Google News: fichajes": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
     "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 0,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -26,10 +19,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 0,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 0,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
