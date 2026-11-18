@@ -1,11 +1,15 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-18T19:35:35+00:00",
+  "actualizado": "2026-11-18T19:39:21+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 73,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -16,10 +20,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 7,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
