@@ -1,11 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-18T09:16:53+00:00",
+  "actualizado": "2026-11-18T09:20:41+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 9,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
@@ -18,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 8,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 8,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
