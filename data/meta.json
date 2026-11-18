@@ -1,16 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-18T05:12:44+00:00",
+  "actualizado": "2026-11-18T05:16:26+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 1,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 3,
+  "fuentes_ok": 74,
   "fuentes_fallidas": {
-    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 0,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -18,10 +19,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 0,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 0,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
