@@ -1,10 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-18T17:23:12+00:00",
+  "actualizado": "2026-11-18T17:28:07+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 12,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 13,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
