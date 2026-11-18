@@ -1,12 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-18T13:12:27+00:00",
+  "actualizado": "2026-11-18T13:16:31+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 13,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 16,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "Hacker News (lo más votado)": "HTTPError: HTTP Error 502: Bad Gateway",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 2,
@@ -17,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 11,
+    "enviados": 12,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 11,
+    "fotos": 12,
     "fotos_fallidas": 0
   }
 }
