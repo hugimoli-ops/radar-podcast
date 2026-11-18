@@ -1,12 +1,18 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-18T13:27:53+00:00",
+  "actualizado": "2026-11-18T13:32:07+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 13,
-  "fuentes_ok": 76,
+  "fuentes_ok": 70,
   "fuentes_fallidas": {
+    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
+    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
