@@ -1,11 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T22:58:58+00:00",
+  "actualizado": "2026-11-19T23:02:41+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 10,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 9,
+  "fuentes_ok": 73,
   "fuentes_fallidas": {
+    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
@@ -17,10 +20,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 7,
+    "fotos": 8,
     "fotos_fallidas": 0
   }
 }
