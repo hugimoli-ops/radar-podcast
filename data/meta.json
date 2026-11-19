@@ -1,19 +1,18 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T14:45:47+00:00",
+  "actualizado": "2026-11-19T14:55:50+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: The read operation timed out  | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-3.5-flash: The read operation timed out  | gemini-flash-latest: The read operation timed out  ",
+    "traducidas": 4,
     "error_traductor": "",
     "clave": "sí"
   },
