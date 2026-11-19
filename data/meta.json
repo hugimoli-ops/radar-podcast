@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T22:13:37+00:00",
+  "actualizado": "2026-11-19T22:17:19+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
+  "nuevas_en_esta_ronda": 5,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
@@ -10,17 +10,17 @@
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"669b5a14cdf6808d\\\",\\n      \\\"titulo\\\" | gemini-flash-lite-latest: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"669b5a14cdf6808d\\\",\\n      \\\"titulo\\\" | gemini-3.5-flash: HTTP Error 429: Too Many Requests [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"",
+    "traducidas": 4,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 7,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
