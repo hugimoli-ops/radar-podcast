@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T15:00:05+00:00",
+  "actualizado": "2026-11-19T15:07:15+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 19,
+  "nuevas_en_esta_ronda": 16,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
@@ -10,17 +10,17 @@
   },
   "ia": {
     "peticiones": 2,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
+    "traducidas": 10,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 17,
+    "enviados": 11,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 17,
+    "fotos": 11,
     "fotos_fallidas": 0
   }
 }
