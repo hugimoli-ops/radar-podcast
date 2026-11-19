@@ -1,14 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T21:10:24+00:00",
+  "actualizado": "2026-11-19T21:14:07+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 74,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
