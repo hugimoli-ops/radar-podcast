@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T23:29:14+00:00",
+  "actualizado": "2026-11-19T23:32:58+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
+  "nuevas_en_esta_ronda": 8,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 7,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
