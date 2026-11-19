@@ -1,11 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T06:56:37+00:00",
+  "actualizado": "2026-11-19T07:00:35+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 3,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
@@ -17,7 +18,7 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
     "fotos": 2,
