@@ -1,28 +1,26 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T06:32:31+00:00",
+  "actualizado": "2026-11-19T06:38:08+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
-  "fuentes_ok": 74,
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 429: Too Many Requests [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/d | gemini-flash-lite-latest: HTTP Error 429: Too Many Requests [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head t",
+    "traducidas": 3,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 6,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 6,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
