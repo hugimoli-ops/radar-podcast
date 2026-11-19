@@ -1,10 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T12:13:37+00:00",
+  "actualizado": "2026-11-19T12:17:23+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 73,
   "fuentes_fallidas": {
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
@@ -19,8 +22,8 @@
   "telegram": {
     "enviados": 5,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n1-otros.png",
-    "fotos": 4,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 5,
+    "fotos_fallidas": 0
   }
 }
