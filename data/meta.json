@@ -1,26 +1,27 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-19T17:13:21+00:00",
+  "actualizado": "2026-11-19T17:21:24+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 28,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 33,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 3,
     "errores": 2,
     "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
-    "traducidas": 20,
+    "traducidas": 17,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 25,
+    "enviados": 27,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 25,
+    "fotos": 27,
     "fotos_fallidas": 0
   }
 }
