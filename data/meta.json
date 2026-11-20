@@ -1,11 +1,16 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-20T15:37:48+00:00",
+  "actualizado": "2026-11-20T15:41:49+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 20,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 13,
+  "fuentes_ok": 71,
   "fuentes_fallidas": {
+    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Real Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
@@ -17,10 +22,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 18,
+    "enviados": 12,
     "errores": 0,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n3-videojuegos.png",
-    "fotos": 17,
-    "fotos_fallidas": 1
+    "ultimo_error": "",
+    "fotos": 12,
+    "fotos_fallidas": 0
   }
 }
