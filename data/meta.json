@@ -1,13 +1,20 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-20T06:57:36+00:00",
+  "actualizado": "2026-11-20T07:01:23+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 2,
+  "fuentes_ok": 68,
   "fuentes_fallidas": {
-    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Real Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -18,10 +25,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
