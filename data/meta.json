@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-20T20:04:59+00:00",
+  "actualizado": "2026-11-20T20:09:19+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 8,
+  "nuevas_en_esta_ronda": 11,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 6,
-    "errores": 0,
-    "ultimo_error": "",
-    "fotos": 6,
-    "fotos_fallidas": 0
+    "enviados": 4,
+    "errores": 2,
+    "ultimo_error": "sendMessage URLError: <urlopen error [Errno 104] Connection reset by peer>  · ",
+    "fotos": 4,
+    "fotos_fallidas": 2
   }
 }
