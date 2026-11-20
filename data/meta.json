@@ -1,15 +1,15 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-20T08:10:13+00:00",
+  "actualizado": "2026-11-20T08:14:09+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
+  "nuevas_en_esta_ronda": 15,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 9,
+    "enviados": 13,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 9,
+    "fotos": 13,
     "fotos_fallidas": 0
   }
 }
