@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-20T20:13:07+00:00",
+  "actualizado": "2026-11-20T20:17:07+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
+  "nuevas_en_esta_ronda": 7,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
-    "errores": 2,
-    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n4-economia.png",
-    "fotos": 0,
-    "fotos_fallidas": 3
+    "enviados": 4,
+    "errores": 1,
+    "ultimo_error": "sendMessage URLError: <urlopen error [Errno 104] Connection reset by peer>  · ",
+    "fotos": 4,
+    "fotos_fallidas": 1
   }
 }
