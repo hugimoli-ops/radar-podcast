@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-21T20:23:48+00:00",
+  "actualizado": "2026-11-21T20:27:42+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
+  "nuevas_en_esta_ronda": 18,
   "fuentes_ok": 75,
   "fuentes_fallidas": {
     "The Decoder": "HTTPError: HTTP Error 500: Internal Server Error",
@@ -18,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 10,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 10,
     "fotos_fallidas": 0
   }
 }
