@@ -1,13 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-21T11:17:24+00:00",
+  "actualizado": "2026-11-21T11:21:16+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
+  "nuevas_en_esta_ronda": 10,
   "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
