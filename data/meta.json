@@ -1,26 +1,26 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-21T10:22:06+00:00",
+  "actualizado": "2026-11-21T10:25:35+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 13,
+  "nuevas_en_esta_ronda": 2,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 2,
-    "errores": 1,
-    "ultimo_error": "ValueError: gemini-3.5-flash-lite: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"cfd5798f11ed34d8\\\",\\n      \\\"titulo\\\" | gemini-flash-lite-latest: respuesta rara: {\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"noticias\\\": [\\n    {\\n      \\\"id\\\": \\\"cfd5798f11ed34d8\\\",\\n      \\\"titulo\\\" | gemini-3.5-flash: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\":",
-    "traducidas": 10,
+    "peticiones": 1,
+    "errores": 0,
+    "ultimo_error": "",
+    "traducidas": 0,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 11,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 11,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
