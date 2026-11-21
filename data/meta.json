@@ -1,12 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-21T21:46:17+00:00",
+  "actualizado": "2026-11-21T21:50:21+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 1,
-  "fuentes_ok": 74,
+  "nuevas_en_esta_ronda": 2,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: fichajes": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
