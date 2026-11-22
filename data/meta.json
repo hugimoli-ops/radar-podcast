@@ -1,13 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-22T19:21:12+00:00",
+  "actualizado": "2026-11-22T19:24:51+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 73,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "The Information (titulares)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
@@ -20,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
