@@ -1,15 +1,16 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-22T03:32:53+00:00",
+  "actualizado": "2026-11-22T03:36:39+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 0,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 1,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 0,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -17,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 0,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 0,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
