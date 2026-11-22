@@ -1,16 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-22T06:02:41+00:00",
+  "actualizado": "2026-11-22T06:06:31+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 72,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: famosos en Zaragoza": "URLError: <urlopen error _ssl.c:1063: The handshake operation timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -21,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 1,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
