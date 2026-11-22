@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-22T20:19:49+00:00",
+  "actualizado": "2026-11-22T20:23:41+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
+  "nuevas_en_esta_ronda": 0,
   "fuentes_ok": 44,
   "fuentes_fallidas": {
     "Yahoo Finance": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -16,6 +16,7 @@
     "Google News: compras de empresas": "HTTPError: HTTP Error 503: Service Unavailable",
     "Google DeepMind": "HTTPError: HTTP Error 503: Service Unavailable",
     "Google News: Anthropic y Claude": "HTTPError: HTTP Error 503: Service Unavailable",
+    "The Decoder": "HTTPError: HTTP Error 500: Internal Server Error",
     "Google News: IA en España": "HTTPError: HTTP Error 503: Service Unavailable",
     "Google News: incidentes de IA": "HTTPError: HTTP Error 503: Service Unavailable",
     "Heraldo (Zaragoza)": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -29,7 +30,6 @@
     "ESPN": "HTTPError: HTTP Error 503: Service Unavailable",
     "Google News: Real Zaragoza": "HTTPError: HTTP Error 503: Service Unavailable",
     "Google News: fichajes": "HTTPError: HTTP Error 503: Service Unavailable",
-    "PlayStation Blog": "TimeoutError: The read operation timed out",
     "Google News: cartas (TCG)": "HTTPError: HTTP Error 503: Service Unavailable",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Google News: grados nuevos": "HTTPError: HTTP Error 503: Service Unavailable",
@@ -41,7 +41,7 @@
     "Forbes (startups y millonarios)": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -49,10 +49,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
