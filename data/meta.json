@@ -1,16 +1,16 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-23T11:31:21+00:00",
+  "actualizado": "2026-11-23T11:35:45+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
+  "nuevas_en_esta_ronda": 23,
   "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "Hacker News (lo más votado)": "URLError: <urlopen error _ssl.c:1063: The handshake operation timed out>",
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -18,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 6,
+    "enviados": 19,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 6,
+    "fotos": 19,
     "fotos_fallidas": 0
   }
 }
