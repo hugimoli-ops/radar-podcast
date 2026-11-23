@@ -1,11 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-23T06:51:56+00:00",
+  "actualizado": "2026-11-23T06:55:33+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 76,
+  "fuentes_ok": 74,
   "fuentes_fallidas": {
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
