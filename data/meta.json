@@ -1,27 +1,26 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-23T08:01:10+00:00",
+  "actualizado": "2026-11-23T08:05:08+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 8,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 17,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Hacker News (lo más votado)": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
-    "traducidas": 0,
+    "traducidas": 1,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 10,
+    "enviados": 15,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 8,
+    "fotos": 15,
     "fotos_fallidas": 0
   }
 }
