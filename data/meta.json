@@ -1,12 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-23T09:27:12+00:00",
+  "actualizado": "2026-11-23T09:31:03+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 76,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
