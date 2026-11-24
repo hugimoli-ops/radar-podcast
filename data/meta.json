@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T12:42:52+00:00",
+  "actualizado": "2026-11-24T12:48:07+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 12,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 11,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 7,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 7,
+    "fotos": 8,
     "fotos_fallidas": 0
   }
 }
