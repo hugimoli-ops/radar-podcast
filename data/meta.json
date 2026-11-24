@@ -1,8 +1,8 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T02:11:13+00:00",
+  "actualizado": "2026-11-24T02:15:37+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 14,
+  "nuevas_en_esta_ronda": 13,
   "fuentes_ok": 75,
   "fuentes_fallidas": {
     "Trump en Truth Social (archivo no oficial)": "TimeoutError: The read operation timed out",
