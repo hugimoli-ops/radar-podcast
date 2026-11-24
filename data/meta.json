@@ -1,13 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T03:03:04+00:00",
+  "actualizado": "2026-11-24T03:06:52+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 3,
+  "fuentes_ok": 71,
   "fuentes_fallidas": {
     "Trump en Truth Social (archivo no oficial)": "TimeoutError: The read operation timed out",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "TimeoutError: The read operation timed out"
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 503: first byte timeout",
+    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Trump en Truth Social (archivo trumpstruth.org)": "TimeoutError: The read operation timed out",
+    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -18,10 +22,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
