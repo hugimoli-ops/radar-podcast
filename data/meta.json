@@ -1,15 +1,22 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T01:58:48+00:00",
+  "actualizado": "2026-11-24T02:03:07+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 28,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 14,
+  "fuentes_ok": 69,
   "fuentes_fallidas": {
+    "Casa Blanca": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Trump en Truth Social (archivo no oficial)": "TimeoutError: The read operation timed out",
+    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Trump en Truth Social (archivo trumpstruth.org)": "TimeoutError: The read operation timed out"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -17,10 +24,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 14,
+    "enviados": 10,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 14,
+    "fotos": 10,
     "fotos_fallidas": 0
   }
 }
