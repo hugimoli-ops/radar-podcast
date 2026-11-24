@@ -1,15 +1,16 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T03:56:57+00:00",
+  "actualizado": "2026-11-24T04:00:46+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 0,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Trump en Truth Social (archivo no oficial)": "TimeoutError: The read operation timed out",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
     "Trump en Truth Social (archivo trumpstruth.org)": "TimeoutError: The read operation timed out"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -17,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
