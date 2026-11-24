@@ -1,19 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T14:33:07+00:00",
+  "actualizado": "2026-11-24T14:37:02+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 14,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 16,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 2,
-    "errores": 1,
+    "errores": 2,
     "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
-    "traducidas": 10,
+    "traducidas": 12,
     "error_traductor": "",
     "clave": "sí"
   },
