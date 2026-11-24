@@ -1,12 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T15:28:17+00:00",
+  "actualizado": "2026-11-24T15:32:01+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 12,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 74,
   "fuentes_fallidas": {
+    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Space.com": "HTTPError: HTTP Error 404: Not Found"
+    "Space.com": "HTTPError: HTTP Error 404: Not Found",
+    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
