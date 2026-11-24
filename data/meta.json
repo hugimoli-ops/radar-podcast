@@ -1,11 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-24T10:08:28+00:00",
+  "actualizado": "2026-11-24T10:12:11+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 12,
+  "nuevas_en_esta_ronda": 8,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 10,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 10,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
