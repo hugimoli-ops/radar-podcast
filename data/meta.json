@@ -1,26 +1,27 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-23T14:28:54+00:00",
+  "actualizado": "2026-11-24T01:50:12+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 13,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 516,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Trump en Truth Social (archivo trumpstruth.org)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 4,
     "errores": 0,
     "ultimo_error": "",
-    "traducidas": 0,
+    "traducidas": 80,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 12,
+    "enviados": 41,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 12,
+    "fotos": 40,
     "fotos_fallidas": 0
   }
 }
