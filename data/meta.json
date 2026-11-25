@@ -1,35 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T05:02:08+00:00",
+  "actualizado": "2026-11-25T05:05:45+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 1,
-  "fuentes_ok": 67,
+  "nuevas_en_esta_ronda": 8,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
-    "The Information (titulares)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: streetwear y pop-ups": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: cartas (TCG)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
     "errores": 1,
     "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 429: Too Many Requests [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/d | gemini-flash-lite-latest: HTTP Error 429: Too Many Requests [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head t",
-    "traducidas": 1,
+    "traducidas": 8,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 8,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 1,
+    "fotos": 8,
     "fotos_fallidas": 0
   }
 }
