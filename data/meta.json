@@ -1,12 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T11:12:03+00:00",
+  "actualizado": "2026-11-25T11:16:01+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 14,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 16,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "The Information (titulares)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -18,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 12,
+    "enviados": 14,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 12,
+    "fotos": 14,
     "fotos_fallidas": 0
   }
 }
