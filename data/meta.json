@@ -1,11 +1,15 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T11:58:14+00:00",
+  "actualizado": "2026-11-25T12:01:58+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 10,
-  "fuentes_ok": 77,
+  "fuentes_ok": 73,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: cartas (TCG)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
