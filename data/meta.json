@@ -1,14 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T11:43:27+00:00",
+  "actualizado": "2026-11-25T11:47:06+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 6,
-  "fuentes_ok": 73,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: Real Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
