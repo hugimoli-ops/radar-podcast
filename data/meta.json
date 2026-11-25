@@ -1,11 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T10:43:20+00:00",
+  "actualizado": "2026-11-25T10:47:15+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
+  "nuevas_en_esta_ronda": 7,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 6,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 6,
     "fotos_fallidas": 0
   }
 }
