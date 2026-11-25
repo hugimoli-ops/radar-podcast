@@ -1,14 +1,17 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T03:38:29+00:00",
+  "actualizado": "2026-11-25T03:41:50+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 1,
+  "fuentes_ok": 74,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: becas y PAU": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 0,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +19,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 0,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 5,
+    "fotos": 0,
     "fotos_fallidas": 0
   }
 }
