@@ -1,14 +1,15 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T11:27:39+00:00",
+  "actualizado": "2026-11-25T11:31:19+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 16,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 8,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
+    "Yahoo Finance": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 13,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 13,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
