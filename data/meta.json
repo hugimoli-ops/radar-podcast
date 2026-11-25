@@ -1,11 +1,19 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-25T10:59:09+00:00",
+  "actualizado": "2026-11-25T11:03:10+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 9,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 69,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: movimientos extremos": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: streetwear y pop-ups": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Real Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -16,10 +24,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 9,
     "errores": 0,
-    "ultimo_error": "",
-    "fotos": 4,
-    "fotos_fallidas": 0
+    "ultimo_error": "sendPhoto URLError: <urlopen error [Errno 104] Connection reset by peer>  · n2-moda.png",
+    "fotos": 8,
+    "fotos_fallidas": 1
   }
 }
