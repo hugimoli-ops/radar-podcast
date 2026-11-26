@@ -1,14 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T02:06:15+00:00",
+  "actualizado": "2026-11-26T02:09:42+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 74,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: grados nuevos": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
