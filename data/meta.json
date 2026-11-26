@@ -1,13 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T12:00:11+00:00",
+  "actualizado": "2026-11-26T12:03:51+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 8,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google News: Real Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: lo que publican en X (Musk, Altman, Amodei, Huang)": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
@@ -18,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 4,
+    "enviados": 7,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 4,
+    "fotos": 7,
     "fotos_fallidas": 0
   }
 }
