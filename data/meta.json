@@ -1,11 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T21:57:50+00:00",
+  "actualizado": "2026-11-26T22:01:39+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "Hacker News (lo más votado)": "URLError: <urlopen error timed out>",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Forbes (startups y millonarios)": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
