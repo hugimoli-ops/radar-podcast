@@ -1,10 +1,16 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T03:42:46+00:00",
+  "actualizado": "2026-11-26T03:46:08+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 6,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 2,
+  "fuentes_ok": 71,
   "fuentes_fallidas": {
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: salidas a bolsa (IPO)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: activistas y participaciones": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: planes en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +22,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 5,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
