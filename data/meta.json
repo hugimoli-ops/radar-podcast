@@ -1,19 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T08:02:41+00:00",
+  "actualizado": "2026-11-26T08:06:38+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 11,
-  "fuentes_ok": 72,
+  "nuevas_en_esta_ronda": 13,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Hacker News (lo más votado)": "HTTPError: HTTP Error 502: Bad Gateway",
-    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: famosos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: portada España": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
+    "peticiones": 2,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -21,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 10,
+    "enviados": 11,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 10,
+    "fotos": 11,
     "fotos_fallidas": 0
   }
 }
