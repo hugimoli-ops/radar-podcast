@@ -1,27 +1,25 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T10:01:15+00:00",
+  "actualizado": "2026-11-26T10:07:15+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 10,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 16,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Hacker News (lo más votado)": "RemoteDisconnected: Remote end closed connection without response",
-    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 1,
-    "errores": 0,
-    "ultimo_error": "",
-    "traducidas": 0,
+    "peticiones": 2,
+    "errores": 1,
+    "ultimo_error": "ValueError: gemini-3.5-flash-lite: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n] | gemini-flash-lite-latest: HTTP Error 503: Service Unavailable [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",",
+    "traducidas": 10,
     "error_traductor": "",
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 10,
+    "enviados": 12,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 10,
+    "fotos": 12,
     "fotos_fallidas": 0
   }
 }
