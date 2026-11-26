@@ -1,10 +1,12 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T09:57:31+00:00",
+  "actualizado": "2026-11-26T10:01:15+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 10,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Hacker News (lo más votado)": "RemoteDisconnected: Remote end closed connection without response",
+    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 3,
+    "enviados": 10,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 3,
+    "fotos": 10,
     "fotos_fallidas": 0
   }
 }
