@@ -1,11 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T18:41:16+00:00",
+  "actualizado": "2026-11-26T18:44:52+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 76,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google News: IA en España": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
