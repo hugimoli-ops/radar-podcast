@@ -1,19 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-26T08:21:37+00:00",
+  "actualizado": "2026-11-26T08:25:05+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
-  "fuentes_ok": 69,
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
-    "The Verge IA": "URLError: <urlopen error _ssl.c:1063: The handshake operation timed out>",
-    "Heraldo (Zaragoza)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: fichajes": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: cartas (TCG)": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
@@ -24,10 +16,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 5,
+    "enviados": 3,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 5,
+    "fotos": 3,
     "fotos_fallidas": 0
   }
 }
