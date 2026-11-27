@@ -1,13 +1,10 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-27T11:51:43+00:00",
+  "actualizado": "2026-11-27T11:55:13+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 4,
-  "fuentes_ok": 74,
+  "nuevas_en_esta_ronda": 5,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: fichajes": "HTTPError: HTTP Error 429: Too Many Requests",
-    "Google News: cartas (TCG)": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
