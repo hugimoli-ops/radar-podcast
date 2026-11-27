@@ -1,14 +1,16 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-27T16:10:06+00:00",
+  "actualizado": "2026-11-27T16:13:44+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 15,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 9,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
+    "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
-    "peticiones": 2,
+    "peticiones": 1,
     "errores": 0,
     "ultimo_error": "",
     "traducidas": 0,
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 14,
+    "enviados": 9,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 14,
+    "fotos": 9,
     "fotos_fallidas": 0
   }
 }
