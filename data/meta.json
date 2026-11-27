@@ -1,11 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-27T16:17:13+00:00",
+  "actualizado": "2026-11-27T16:21:00+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 5,
+  "nuevas_en_esta_ronda": 10,
   "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Reserva Federal": "HTTPError: HTTP Error 404: Not Found",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -17,10 +17,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 10,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 10,
     "fotos_fallidas": 0
   }
 }
