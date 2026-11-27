@@ -1,10 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-27T18:58:13+00:00",
+  "actualizado": "2026-11-27T19:01:46+00:00",
   "noticias": 2500,
   "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 77,
+  "fuentes_ok": 73,
   "fuentes_fallidas": {
+    "The Information (titulares)": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: incidentes de IA": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: streetwear y pop-ups": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +20,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 1,
+    "enviados": 2,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 1,
+    "fotos": 2,
     "fotos_fallidas": 0
   }
 }
