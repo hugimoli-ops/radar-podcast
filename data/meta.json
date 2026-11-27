@@ -1,11 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-27T14:38:39+00:00",
+  "actualizado": "2026-11-27T14:42:15+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 76,
+  "nuevas_en_esta_ronda": 6,
+  "fuentes_ok": 73,
   "fuentes_fallidas": {
     "Google News: OPV y salida a bolsa": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: compras de empresas": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google DeepMind": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: vivienda y leyes": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
