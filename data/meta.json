@@ -1,10 +1,14 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-27T13:54:38+00:00",
+  "actualizado": "2026-11-27T13:58:14+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 7,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 4,
+  "fuentes_ok": 73,
   "fuentes_fallidas": {
+    "Google News: Trump y mercados": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: compras de empresas": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: El Periódico de Aragón": "HTTPError: HTTP Error 429: Too Many Requests",
+    "Google News: giras en España": "HTTPError: HTTP Error 429: Too Many Requests",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
@@ -16,10 +20,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 6,
+    "enviados": 4,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 6,
+    "fotos": 4,
     "fotos_fallidas": 0
   }
 }
