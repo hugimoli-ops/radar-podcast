@@ -1,12 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-27T23:11:38+00:00",
+  "actualizado": "2026-11-27T23:15:40+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 8,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 9,
+  "fuentes_ok": 76,
   "fuentes_fallidas": {
-    "Google News: Anthropic y Claude": "HTTPError: HTTP Error 429: Too Many Requests",
-    "The Decoder": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "The Decoder": "URLError: <urlopen error timed out>",
     "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
