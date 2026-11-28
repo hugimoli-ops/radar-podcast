@@ -1,11 +1,13 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-28T01:33:11+00:00",
+  "actualizado": "2026-11-28T01:36:37+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 3,
-  "fuentes_ok": 77,
+  "nuevas_en_esta_ronda": 2,
+  "fuentes_ok": 75,
   "fuentes_fallidas": {
-    "ESA": "HTTPError: HTTP Error 404: Not Found"
+    "ESPN": "HTTPError: HTTP Error 429: Too Many Requests",
+    "ESA": "HTTPError: HTTP Error 404: Not Found",
+    "Google News: Trump publica en Truth Social": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "ia": {
     "peticiones": 1,
@@ -16,10 +18,10 @@
     "clave": "sí"
   },
   "telegram": {
-    "enviados": 2,
+    "enviados": 1,
     "errores": 0,
     "ultimo_error": "",
-    "fotos": 2,
+    "fotos": 1,
     "fotos_fallidas": 0
   }
 }
