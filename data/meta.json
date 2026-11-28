@@ -1,13 +1,11 @@
 {
   "bot": "radarpodcast_bot",
-  "actualizado": "2026-11-28T02:08:12+00:00",
+  "actualizado": "2026-11-28T02:11:43+00:00",
   "noticias": 2500,
-  "nuevas_en_esta_ronda": 2,
-  "fuentes_ok": 75,
+  "nuevas_en_esta_ronda": 3,
+  "fuentes_ok": 77,
   "fuentes_fallidas": {
-    "Google News: conciertos en Zaragoza": "HTTPError: HTTP Error 429: Too Many Requests",
-    "ESA": "HTTPError: HTTP Error 404: Not Found",
-    "Google News: Unizar": "HTTPError: HTTP Error 429: Too Many Requests"
+    "ESA": "HTTPError: HTTP Error 404: Not Found"
   },
   "ia": {
     "peticiones": 1,
